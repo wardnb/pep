@@ -1,0 +1,5 @@
+# Cloudflare Pages config for the Peptide Vendor Rater (static snapshot).
+# The deployable site is the ./dist folder produced by backend/build_static.py.
+name = "peptide-rater"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-07-25"

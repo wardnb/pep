@@ -1,0 +1,420 @@
+{
+  "_meta": {
+    "compiled": "2026-07-25",
+    "disclaimer": "Public, sourced data about the TRANSPARENCY and lab-testing of research-peptide vendors. Vendor marketing purity claims are treated as unverified unless tied to a verifiable third-party COA. 'community_score' is a heuristic (-1..+1) derived from public discussion and is intentionally weighted low. Unknown signals are left null and are excluded from scoring rather than guessed. Not medical advice; not an endorsement of any vendor or of peptide use.",
+    "primary_aggregators": [
+      {"name": "Finnrick", "url": "https://www.finnrick.com/vendors", "note": "9,041 published lab tests across ~275 vendors as of Jul 2026; per-vendor safety %25 + pass/fail."},
+      {"name": "Peptigrity", "url": "https://peptigrity.com/lab-tests", "note": "Aggregates individual third-party lab results; open methodology, HPLC purity weighted ~60%25."}
+    ]
+  },
+  "labs": [
+    {"name": "Janoshik Analytical", "location": "Prague, Czech Republic", "accredited": 0, "capabilities": "HPLC purity, LC-MS/MS identity, quantity/fill vs label, endotoxin (LAL), heavy metals (ICP-MS)", "verification_url": "https://public.janoshik.com"},
+    {"name": "MZ Biolabs", "location": "Tucson, AZ, USA", "accredited": 1, "capabilities": "HPLC-UV purity, QTOF/LC-MS/MS identity, amino acid analysis, aggregation studies", "verification_url": ""},
+    {"name": "Colmaric Analyticals", "location": "St. Petersburg, FL, USA", "accredited": 1, "capabilities": "HPLC purity, LC-MS/MS identity, TLC/UV/FT-IR, stability", "verification_url": ""},
+    {"name": "Vanguard Laboratory", "location": "Olympia, WA, USA", "accredited": 1, "capabilities": "HPLC purity/quantity, sterility, endotoxin, ICP-MS trace metals, identity", "verification_url": ""},
+    {"name": "Chromate", "location": "USA", "accredited": 0, "capabilities": "HPLC purity, LC-MS identity, endotoxin; QR-code COA verification", "verification_url": ""},
+    {"name": "Liquilabs", "location": "Czech Republic", "accredited": 0, "capabilities": "HPLC-UV, HPLC-MS, ICP-MS heavy metals, endotoxin (LAL), bioburden", "verification_url": ""},
+    {"name": "ILS Laboratories", "location": "USA", "accredited": 0, "capabilities": "HPLC purity, LC-MS identity", "verification_url": ""},
+    {"name": "Freedom Diagnostics Testing", "location": "Franklin, TN, USA", "accredited": 0, "capabilities": "HPLC purity, MS identity, endotoxin, stability", "verification_url": ""},
+    {"name": "BTLabs", "location": "USA", "accredited": 0, "capabilities": "HPLC purity, LC-MS identity", "verification_url": ""},
+    {"name": "Accumark Labs", "location": "Anaheim, CA, USA", "accredited": 0, "capabilities": "HPLC purity, identity, quantity/fill; QR verification", "verification_url": "https://accumarklabs.com/"},
+    {"name": "Kovera Labs", "location": "USA", "accredited": 0, "capabilities": "ICP-MS heavy metals (EPA-referenced)", "verification_url": ""}
+  ],
+  "vendors": [
+    {
+      "name": "Peptide Sciences", "website": "https://www.peptidesciences.com", "publishes_coa": "yes",
+      "community_score": 0.1, "community_notes": "Long-established; mixed independent results (strong on some peptides, identity/fill issues on several GLP-1s).",
+      "agg_score": 61, "agg_tests": 130, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/peptide-sciences",
+      "notes": "Finnrick #241/274; strong GHK-Cu, weak Retatrutide/CJC-1295/Tesamorelin/Tirzepatide.",
+      "results": [
+        {"peptide": "(aggregate)", "tests_count": 130, "pass_count": 78, "fail_count": 52, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/peptide-sciences", "notes": "78 pass / 52 fail across published tests."},
+        {"peptide": "GHK-Cu", "purity_pct": 92, "tests_count": 1, "test_date": "2026-06-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/peptide-sciences"},
+        {"peptide": "Semaglutide", "purity_pct": 81, "tests_count": 1, "test_date": "2026-06-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/peptide-sciences"}
+      ],
+      "sources": [{"title": "Finnrick - Peptide Sciences", "url": "https://www.finnrick.com/vendors/peptide-sciences", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Paradigm Peptides", "website": "https://paradigmpeptides.com", "publishes_coa": "yes",
+      "community_score": 0.6, "community_notes": "Well-known US consumer brand; high independent score.",
+      "agg_score": 86, "agg_tests": 18, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors",
+      "results": [{"peptide": "(aggregate)", "tests_count": 18, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors"}],
+      "sources": [{"title": "Finnrick vendors index", "url": "https://www.finnrick.com/vendors", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Peptide Partners", "website": "https://peptide.partners", "publishes_coa": "yes",
+      "community_score": 0.4, "community_notes": "Top independent score on Retatrutide leaderboard. One of the few publishing per-lot ICP-MS heavy-metals COAs (Kovera Labs).",
+      "agg_score": 91, "agg_tests": null, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/peptide-partners",
+      "results": [
+        {"peptide": "(aggregate)", "tests_count": 1, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/peptide-partners"},
+        {"peptide": "5-Amino-1MQ (lot AM202604)", "heavy_metals_pass": 1, "tests_count": 1, "test_date": "2026-05-14", "source_name": "Kovera Labs (ICP-MS)", "source_url": "https://peptide.partners/wp-content/uploads/2026/06/KOV_5-Amino-1MQ_AM202604_HeavyMetals-1.pdf", "notes": "Pb <0.5ppm (limit 10), As <0.1 (1.5), Cd <0.06 (0.5), Hg <0.3 (3) - all PASS.", "lab_name": "Kovera Labs"}
+      ],
+      "sources": [
+        {"title": "Finnrick - Peptide Partners", "url": "https://www.finnrick.com/vendors/peptide-partners", "retrieved_at": "2026-07-25"},
+        {"title": "Peptide Partners - 5-Amino-1MQ heavy-metals COA", "url": "https://peptide.partners/wp-content/uploads/2026/06/KOV_5-Amino-1MQ_AM202604_HeavyMetals-1.pdf", "retrieved_at": "2026-07-25"}
+      ]
+    },
+    {
+      "name": "SRY Labs", "website": "", "publishes_coa": "yes",
+      "community_score": 0.4, "community_notes": "Top independent score (91-92%).",
+      "agg_score": 91, "agg_tests": null, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/",
+      "results": [{"peptide": "(aggregate)", "tests_count": 1, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/"}],
+      "sources": [{"title": "Finnrick leaderboard", "url": "https://www.finnrick.com/", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Zenith Jove Peptide", "website": "", "publishes_coa": "yes",
+      "community_score": null, "community_notes": "Top Retatrutide score; little consumer discussion.",
+      "agg_score": 91, "agg_tests": null, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/",
+      "results": [{"peptide": "(aggregate)", "tests_count": 1, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/"}],
+      "sources": [{"title": "Finnrick leaderboard", "url": "https://www.finnrick.com/", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Amino Lair", "website": "", "publishes_coa": "yes",
+      "community_score": null, "community_notes": "Positive independent score; limited public reputation data.",
+      "agg_score": 86, "agg_tests": 16, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors",
+      "results": [{"peptide": "(aggregate)", "tests_count": 16, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors"}],
+      "sources": [{"title": "Finnrick vendors index", "url": "https://www.finnrick.com/vendors", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "SubQ Society", "website": "https://subqsociety.com", "publishes_coa": "unknown",
+      "community_score": null, "community_notes": "Positive independent score.",
+      "agg_score": 84, "agg_tests": 11, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors",
+      "results": [{"peptide": "(aggregate)", "tests_count": 11, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors"}],
+      "sources": [{"title": "Finnrick vendors index", "url": "https://www.finnrick.com/vendors", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Chimera Peptides", "website": "https://chimeraorder.lovable.app", "publishes_coa": "partial",
+      "community_score": 0.4, "community_notes": "Author-vetted by Gray Market (affiliate-conflicted source); praised service.",
+      "agg_score": 86, "agg_tests": 20, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors",
+      "results": [{"peptide": "(aggregate)", "tests_count": 20, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors", "notes": "Some products tested via Janoshik group buys."}],
+      "sources": [{"title": "Finnrick vendors index", "url": "https://www.finnrick.com/vendors", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Orbitrex Peptides", "website": "https://orbitrexpeptide.is", "publishes_coa": "partial",
+      "community_score": 0.2, "community_notes": "Gray Market partner (affiliate disclosure); high-concentration vials.",
+      "agg_score": 86, "agg_tests": 28, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors",
+      "results": [{"peptide": "(aggregate)", "tests_count": 28, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors"}],
+      "sources": [{"title": "Finnrick vendors index", "url": "https://www.finnrick.com/vendors", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Crush Research", "website": "https://crushresearch.com", "publishes_coa": "yes",
+      "community_score": 0.2, "community_notes": "Praised by Gray Market, but that author is a co-founder (strong bias). Tests multiple vials for mass, purity, endotoxin.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(sterility panel)", "endotoxin_pass": 1, "tests_count": 1, "test_date": "2026-06-01", "source_name": "Gray Market", "source_url": "https://graymarket.substack.com/p/gray-market-where-to-buy-peptides", "notes": "Endotoxin testing reported across multiple vials."}],
+      "sources": [{"title": "Gray Market vendor guide", "url": "https://graymarket.substack.com/p/gray-market-where-to-buy-peptides", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Welli Labs", "website": "https://wellilabs.com", "publishes_coa": "yes",
+      "community_score": 0.2, "community_notes": "Per-order batch tracking; 'best batch tracking in US market' per affiliate source.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(batch tracking)", "tests_count": 1, "test_date": "2026-06-01", "source_name": "Gray Market", "source_url": "https://graymarket.substack.com/p/gray-market-where-to-buy-peptides", "notes": "Batch records accessible by order number."}],
+      "sources": [{"title": "Gray Market vendor guide", "url": "https://graymarket.substack.com/p/gray-market-where-to-buy-peptides", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Peptidology", "website": "https://peptidology.com", "publishes_coa": "yes",
+      "community_score": 0.3, "community_notes": "Marketed as most rigorous protocol (affiliate source). ISO 17025 lab.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(7-point verification)", "sterility_pass": 1, "endotoxin_pass": 1, "tests_count": 1, "test_date": "2026-06-15", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "notes": "7-point analytical verification via Vanguard Laboratory (accredited).", "lab_name": "Vanguard Laboratory"}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "SwissChems", "website": "https://swisschems.is", "publishes_coa": "yes",
+      "community_score": 0.2, "community_notes": "COAs displayed on-site; good reviews in longevity communities (affiliate source).",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(batch tested)", "tests_count": 1, "test_date": "2026-05-01", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources"}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Pure Rawz", "website": "https://purerawz.co", "publishes_coa": "yes",
+      "community_score": 0.1, "community_notes": "Large catalog; some COAs noted as older (freshness concern).",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(on request)", "tests_count": 1, "test_date": "2024-09-01", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "notes": "Some published COAs are noticeably older."}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Core Peptides", "website": "https://corepeptides.com", "publishes_coa": "yes",
+      "community_score": -0.1, "community_notes": "Downgraded Jan 2026 after an unreceived-order report. Vendor claims >99% (unverified).",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(HPLC+MS, vendor)", "tests_count": 1, "test_date": "2025-12-01", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "notes": "Vendor-reported HPLC+MS; treat purity claim as label claim."}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Biotech Peptides", "website": "https://biotechpeptides.com", "publishes_coa": "yes",
+      "community_score": 0.1, "community_notes": "San Diego based; vendor claims >99% (unverified).",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(HPLC+MS, vendor)", "tests_count": 1, "test_date": "2026-01-01", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "notes": "Multiple HPLC + MS rounds reported by vendor."}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Felix Chemical Supply", "website": "", "publishes_coa": "yes",
+      "community_score": 0.2, "community_notes": "US-based, fast shipping; added endotoxin testing Nov 2025.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(sterility panel)", "endotoxin_pass": 1, "tests_count": 1, "test_date": "2025-11-01", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "notes": "Endotoxin screening added Nov 2025."}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Apollo Peptide Sciences", "website": "", "publishes_coa": "yes",
+      "community_score": null, "community_notes": "Newer vendor; endotoxin screening reported.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(sterility panel)", "endotoxin_pass": 1, "tests_count": 1, "test_date": "2026-03-01", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources"}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Limitless Biotech", "website": "", "publishes_coa": "yes",
+      "community_score": 0.2, "community_notes": "Rated 'best overall' by an affiliate reviewer; >=96% min standard cited.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(batch, >=96% std)", "purity_pct": 96, "tests_count": 1, "test_date": "2026-04-01", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "notes": "Stated >=96% minimum purity standard."}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "GenX Bio", "website": "", "publishes_coa": "yes",
+      "community_score": -0.05, "community_notes": "Operating since 2013; lowest-rated (3.8/5) on one affiliate list.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(vendor tested)", "tests_count": 1, "test_date": "2025-10-01", "source_name": "Outliyr (affiliate)", "source_url": "https://outliyr.com/best-online-peptide-companies-websites-sources"}],
+      "sources": [{"title": "Outliyr peptide vendor review", "url": "https://outliyr.com/best-online-peptide-companies-websites-sources", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Amino Asylum", "website": "https://aminoasylum.co", "publishes_coa": "unknown",
+      "community_score": -0.5, "community_notes": "Long-discussed on Reddit; mixed-to-controversial reputation, linked to scam discussions. Verify before trusting.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [],
+      "sources": [
+        {"title": "The Peptide Report - Amino Asylum review", "url": "https://www.thepeptidereport.com/amino-asylum-review-pioneering-peptide-solutions/", "retrieved_at": "2026-07-25"},
+        {"title": "Is Soma Chems / Amino Asylum a scam?", "url": "https://enhancedinfo.gumroad.com/p/is-soma-chems-amino-asylum-a-scam", "retrieved_at": "2026-07-25"}
+      ]
+    },
+    {
+      "name": "Aavant Research", "website": "https://aavantpeptides.com", "publishes_coa": "unknown",
+      "community_score": 0.4, "community_notes": "Rising, well-rated on Finnrick; limited long-term track record. (Domain unconfirmed: aavantacr.com vs aavantpeptides.com.)",
+      "agg_score": 87, "agg_tests": 18, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/aavant-research",
+      "results": [{"peptide": "(aggregate)", "tests_count": 18, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/aavant-research"}],
+      "sources": [{"title": "Finnrick - Aavant Research", "url": "https://www.finnrick.com/vendors/aavant-research", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Inno Peptides", "website": "", "publishes_coa": "partial",
+      "community_score": 0.3, "community_notes": "Strong Finnrick purity numbers; limited independent community history.",
+      "agg_score": 88, "agg_tests": 19, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/inno-peptides",
+      "results": [
+        {"peptide": "Retatrutide", "purity_pct": 99.9, "tests_count": 6, "test_date": "2026-05-11", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/inno-peptides"},
+        {"peptide": "Tirzepatide", "purity_pct": 99.9, "tests_count": 5, "test_date": "2026-05-11", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/inno-peptides"},
+        {"peptide": "(endotoxin)", "endotoxin_pass": 1, "tests_count": 1, "test_date": "2026-05-11", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/inno-peptides", "notes": "One sample showed endotoxin below LOQ; most tests did not include LAL."}
+      ],
+      "sources": [{"title": "Finnrick - Inno Peptides", "url": "https://www.finnrick.com/vendors/inno-peptides", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Marvel Pep", "website": "", "publishes_coa": "unknown",
+      "community_score": null, "community_notes": "Top Finnrick composite but small test count and little community discussion.",
+      "agg_score": 89, "agg_tests": 11, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors",
+      "results": [{"peptide": "(aggregate)", "tests_count": 11, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors"}],
+      "sources": [{"title": "Finnrick vendors index", "url": "https://www.finnrick.com/vendors", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Retalux", "website": "", "publishes_coa": "unknown",
+      "community_score": null, "community_notes": "Finnrick-tracked (8 samples, 2 peptides); little community signal.",
+      "agg_score": 86, "agg_tests": 8, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/retalux",
+      "results": [{"peptide": "(aggregate)", "tests_count": 8, "test_date": "2026-06-26", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/retalux"}],
+      "sources": [{"title": "Finnrick - Retalux", "url": "https://www.finnrick.com/vendors/retalux", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Kits4less", "website": "", "publishes_coa": "unknown",
+      "community_score": 0, "community_notes": "Good median purity but Finnrick flags significant batch-to-batch variance.",
+      "agg_score": 85, "agg_tests": 7, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/kits4less",
+      "results": [{"peptide": "Retatrutide", "purity_pct": 99.8, "tests_count": 7, "test_date": "2026-03-03", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/kits4less", "notes": "Median 99.8%, range 99.65-99.93%; batch scores ranged 4.7-10 (variance)."}],
+      "sources": [{"title": "Finnrick - Kits4less", "url": "https://www.finnrick.com/vendors/kits4less", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "BioLongevity Labs", "website": "https://biolongevitylabs.com", "publishes_coa": "partial",
+      "community_score": 0.1, "community_notes": "Mixed - strong on GHK-Cu/PT-141 but an 'E' grade on BPC-157. Finnrick page avg 6.0/10 across 33 tests.",
+      "agg_score": null, "agg_tests": 33, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/biolongevity-labs",
+      "notes": "Finnrick uses a 0-10 page average here (6.0/10), not the 0-100 index score, so no composite is claimed; individual purity results shown instead.",
+      "results": [
+        {"peptide": "GHK-Cu", "purity_pct": 99.9, "tests_count": 1, "test_date": "2025-12-06", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/biolongevity-labs"},
+        {"peptide": "PT-141", "purity_pct": 100, "tests_count": 1, "test_date": "2025-12-06", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/biolongevity-labs"},
+        {"peptide": "BPC-157", "purity_pct": 98.4, "tests_count": 1, "test_date": "2025-12-06", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/biolongevity-labs", "notes": "Received an 'E' grade on Finnrick despite ~98% HPLC; identity/consistency concerns."}
+      ],
+      "sources": [
+        {"title": "Finnrick - BioLongevity Labs", "url": "https://www.finnrick.com/vendors/biolongevity-labs", "retrieved_at": "2026-07-25"},
+        {"title": "Trustpilot - BioLongevity Labs", "url": "https://www.trustpilot.com/review/biolongevitylabs.com", "retrieved_at": "2026-07-25"}
+      ]
+    },
+    {
+      "name": "Prime Peptides", "website": "", "publishes_coa": "partial",
+      "community_score": -0.1, "community_notes": "Inconsistent - wide purity spread (82-99.95%), 89% identity pass rate, 'E' grade on CJC-1295.",
+      "agg_score": null, "agg_tests": 19, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/prime-peptides",
+      "notes": "Finnrick page avg 5.8/10 across 19 tests (0-10 scale, not converted to a composite).",
+      "results": [
+        {"peptide": "(identity pass rate)", "tests_count": 19, "pass_count": 17, "fail_count": 2, "test_date": "2025-07-10", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/prime-peptides", "notes": "~89% identity pass rate across samples."},
+        {"peptide": "passing sample (median)", "purity_pct": 99.7, "tests_count": 1, "test_date": "2025-07-10", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/prime-peptides"},
+        {"peptide": "worst sample", "purity_pct": 82.39, "tests_count": 1, "test_date": "2025-07-10", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/prime-peptides", "notes": "Low outlier; full range 82.39-99.95%."}
+      ],
+      "sources": [{"title": "Finnrick - Prime Peptides", "url": "https://www.finnrick.com/vendors/prime-peptides", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Sports Technology Labs", "website": "https://sportstechnologylabs.com", "publishes_coa": "yes",
+      "community_score": 0.6, "community_notes": "Long-established SARMs+peptides source, generally trusted; publishes named-lab (MZ Biolabs) COAs. Note: supporting reviews are affiliate listicles.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "BPC-157", "purity_pct": 99.43, "tests_count": 1, "test_date": "2026-05-01", "source_name": "Vendor COA (MZ Biolabs)", "source_url": "https://sportstechnologylabs.com/product/bpc-157-peptide/", "notes": "HPLC 99.43% (min spec 98%), MS identity confirmed.", "lab_name": "MZ Biolabs"}],
+      "sources": [{"title": "Sports Technology Labs - BPC-157 COA", "url": "https://sportstechnologylabs.com/product/bpc-157-peptide/", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Vici Peptides", "website": "https://vicipeptides.com", "publishes_coa": "yes",
+      "community_score": 0.3, "community_notes": "One of the few publishing endotoxin + sterility (bacteria/yeast/mold) screening per batch; lab unnamed ('ISO 17025 accredited'), claims self-published.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(6-point QC)", "sterility_pass": 1, "endotoxin_pass": 1, "tests_count": 1, "test_date": "2026-05-01", "source_name": "Vendor site", "source_url": "https://vicipeptides.com/", "notes": "Per-batch endotoxin + microbial/sterility screening; HPLC chromatograms published."}],
+      "sources": [
+        {"title": "Vici Peptides - testing", "url": "https://vicipeptides.com/", "retrieved_at": "2026-07-25"},
+        {"title": "Trustpilot - Vici Peptides", "url": "https://ca.trustpilot.com/review/vicipeptides.com", "retrieved_at": "2026-07-25"}
+      ]
+    },
+    {
+      "name": "Humatide", "website": "", "publishes_coa": "partial",
+      "community_score": 0.1, "community_notes": "Frequent recent third-party tests via Peptigrity (ILS Laboratories); newer brand, limited Reddit history.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": "Peptigrity", "agg_source_url": "https://peptigrity.com/lab-tests",
+      "results": [
+        {"peptide": "GHK-Cu", "purity_pct": 99.98, "tests_count": 1, "test_date": "2026-07-03", "source_name": "Peptigrity", "source_url": "https://peptigrity.com/lab-tests", "lab_name": "ILS Laboratories"},
+        {"peptide": "BPC-157", "purity_pct": 99.97, "tests_count": 1, "test_date": "2026-07-03", "source_name": "Peptigrity", "source_url": "https://peptigrity.com/lab-tests", "lab_name": "ILS Laboratories"},
+        {"peptide": "CJC-1295 no-DAC", "purity_pct": 99.86, "tests_count": 1, "test_date": "2026-07-03", "source_name": "Peptigrity", "source_url": "https://peptigrity.com/lab-tests", "lab_name": "ILS Laboratories"},
+        {"peptide": "LL-37", "purity_pct": 99.48, "tests_count": 1, "test_date": "2026-07-03", "source_name": "Peptigrity", "source_url": "https://peptigrity.com/lab-tests", "lab_name": "ILS Laboratories"}
+      ],
+      "sources": [{"title": "Peptigrity lab tests", "url": "https://peptigrity.com/lab-tests", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Pura Peptides", "website": "https://purapeptides.com", "publishes_coa": "partial",
+      "community_score": null, "community_notes": "Appears in Peptigrity test feed (Freedom Diagnostics); little other community signal.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": "Peptigrity", "agg_source_url": "https://peptigrity.com/lab-tests",
+      "results": [{"peptide": "GLP-TZ", "purity_pct": 99.59, "tests_count": 1, "test_date": "2026-07-06", "source_name": "Peptigrity", "source_url": "https://peptigrity.com/lab-tests", "lab_name": "Freedom Diagnostics Testing"}],
+      "sources": [{"title": "Peptigrity lab tests", "url": "https://peptigrity.com/lab-tests", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Vertex Labs", "website": "https://vertexpeptideslab.org", "publishes_coa": "partial",
+      "community_score": null, "community_notes": "Has Peptigrity tests (BTLabs) and a Trustpilot page; sentiment not independently verified.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": "Peptigrity", "agg_source_url": "https://peptigrity.com/lab-tests",
+      "results": [
+        {"peptide": "Retatrutide", "purity_pct": 99.75, "tests_count": 1, "test_date": "2026-06-29", "source_name": "Peptigrity", "source_url": "https://peptigrity.com/lab-tests", "lab_name": "BTLabs"},
+        {"peptide": "GHK-Cu", "purity_pct": 99.7, "tests_count": 1, "test_date": "2026-06-29", "source_name": "Peptigrity", "source_url": "https://peptigrity.com/lab-tests", "lab_name": "BTLabs"}
+      ],
+      "sources": [{"title": "Peptigrity lab tests", "url": "https://peptigrity.com/lab-tests", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Happy Peptides", "website": "https://happypeptides.com", "publishes_coa": "partial",
+      "community_score": 0.2, "community_notes": "~190 broadly-positive Trustpilot reviews; claims every-batch third-party testing but names no lab and publishes no COA. Heavily promoted in affiliate listicles.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [],
+      "sources": [
+        {"title": "Happy Peptides", "url": "https://happypeptides.com/", "retrieved_at": "2026-07-25"},
+        {"title": "Trustpilot - Happy Peptides", "url": "https://ca.trustpilot.com/review/happypeptides.com", "retrieved_at": "2026-07-25"}
+      ]
+    },
+    {
+      "name": "Advanced Research Peptides", "website": "https://advancedresearchpep.com", "publishes_coa": "unknown",
+      "community_score": 0, "community_notes": "Marketing claims third-party testing by 'an accredited US laboratory' but names no lab and shows no public COA; transparency is weak. Little community signal.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [],
+      "sources": [{"title": "Advanced Research Peptides", "url": "https://advancedresearchpep.com/", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "KÖLD (kold.us)", "website": "https://kold.us", "publishes_coa": "partial",
+      "community_score": null, "community_notes": "Too new/small for meaningful independent reputation. Notable: uses Accumark Labs (Anaheim, CA) rather than the community-standard Janoshik. Published COAs cover HPLC purity/identity/fill only - no heavy-metals, sterility, or endotoxin data. (Affiliate listicles that mention it are conflicted.)",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "notes": "The vendor whose COA started this project. Per-lot COAs published on /quality/ with Accumark Labs QR verification.",
+      "results": [
+        {"peptide": "BPC-157 5mg (lot 1024)", "purity_pct": 98.59, "dosage_accuracy_pct": 121, "tests_count": 1, "test_date": "2026-02-25", "source_name": "Accumark Labs COA", "source_url": "https://kold.us/quality/", "notes": "HPLC 98.59% (spec >98%); fill 6.05mg vs 5mg label (over).", "lab_name": "Accumark Labs"},
+        {"peptide": "NAD+ 500mg (lot 6200)", "purity_pct": 99.68, "dosage_accuracy_pct": 102, "tests_count": 1, "test_date": "2026-05-06", "source_name": "Accumark Labs COA", "source_url": "https://kold.us/quality/", "notes": "HPLC 99.68% (spec >98%); fill 508.97mg vs 500mg label. Verify code MSGB-YPVJ.", "lab_name": "Accumark Labs"}
+      ],
+      "sources": [
+        {"title": "KÖLD Quality / COA library", "url": "https://kold.us/quality/", "retrieved_at": "2026-07-25"},
+        {"title": "Accumark Labs", "url": "https://accumarklabs.com/", "retrieved_at": "2026-07-25"}
+      ]
+    },
+    {
+      "name": "Life Link Research", "website": "https://lifelinkresearch.com", "publishes_coa": "yes",
+      "community_score": 0.2, "community_notes": "Runs a 6-test panel on every batch that explicitly includes ICP-MS heavy metals (USP <232>/<233>) via Janoshik; actual values live inside each batch COA.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(6-test panel, every batch)", "heavy_metals_pass": 1, "tests_count": 1, "test_date": "2026-07-01", "source_name": "Life Link Research / Janoshik", "source_url": "https://lifelinkresearch.com/quality-testing/", "notes": "ICP-MS heavy metals vs USP <232>/<233> limits on every batch.", "lab_name": "Janoshik Analytical"}],
+      "sources": [{"title": "Life Link Research - Quality Testing", "url": "https://lifelinkresearch.com/quality-testing/", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Imperial Peptides UK", "website": "https://imperialpeptides.co.uk", "publishes_coa": "partial",
+      "community_score": 0.1, "community_notes": "Claims full ICP-MS heavy-metal screening on every batch with results 'on every CoA', but the blog shows no numeric values (promotional). Lab not named.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [],
+      "sources": [{"title": "Imperial Peptides - why heavy metal testing matters", "url": "https://imperialpeptides.co.uk/blogs/news/why-heavy-metal-testing-matters", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Chameleon Peptides", "website": "https://chameleonpeptides.com", "publishes_coa": "yes",
+      "community_score": null, "community_notes": "Maintains a batch/COA ledger citing Janoshik; heavy-metals inclusion not confirmed.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(Janoshik COA ledger)", "tests_count": 1, "test_date": "2026-06-01", "source_name": "Chameleon Peptides", "source_url": "https://chameleonpeptides.com/testing/", "lab_name": "Janoshik Analytical"}],
+      "sources": [{"title": "Chameleon Peptides - testing", "url": "https://chameleonpeptides.com/testing/", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Panda Peptides", "website": "https://pandapeptides.com", "publishes_coa": "yes",
+      "community_score": null, "community_notes": "Janoshik-verify COA program; heavy-metals inclusion not confirmed.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(Janoshik-verify COAs)", "tests_count": 1, "test_date": "2026-06-01", "source_name": "Panda Peptides", "source_url": "https://pandapeptides.com/coa/", "lab_name": "Janoshik Analytical"}],
+      "sources": [{"title": "Panda Peptides - COA", "url": "https://pandapeptides.com/coa/", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Guangzhou Jeep Biotechnology (JEEP)", "website": "https://jeeppeptides.net", "vendor_type": "raws",
+      "sourcing_notes": "Upstream Chinese raws manufacturer (Guangzhou), sells direct-to-consumer. One of the few named direct sellers (via gray.guide 'verified vendors'). Corporate identity anchored to forum sales identities more than a verified registry file; two impersonator domains exist.",
+      "publishes_coa": "partial",
+      "community_score": 0.2, "community_notes": "Finnrick #2/274 but flags a Tirzepatide endotoxin/traceability incident. Direct China purchase carries customs/QC/recourse risk.",
+      "agg_score": 89, "agg_tests": 30, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/guangzhou-jeep-biotechnology-jeep",
+      "results": [{"peptide": "(aggregate)", "tests_count": 30, "pass_count": 28, "fail_count": 2, "test_date": "2026-07-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/guangzhou-jeep-biotechnology-jeep", "notes": "28 pass / 2 fail / 1 incomplete. GHK-Cu 91%, Reta 90%, Tirz 86%."}],
+      "sources": [{"title": "Finnrick - Guangzhou Jeep", "url": "https://www.finnrick.com/vendors/guangzhou-jeep-biotechnology-jeep", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Nantong Guangyuan Chemical (GYC)", "website": "", "vendor_type": "raws",
+      "sourcing_notes": "Chinese manufacturer (Nantong). Operates a Finnrick-impersonating fraud site (ggpeps.net). Reports of products not shipped after payment.",
+      "publishes_coa": "unknown",
+      "community_score": -1, "community_notes": "Finnrick rating F ('Fraud') - ALL tests RETRACTED for clear signals of large-scale fraud. HIGH RISK - avoid.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/nantong-guangyuan-chemical-gyc",
+      "results": [],
+      "sources": [{"title": "Finnrick - Nantong Guangyuan (GYC)", "url": "https://www.finnrick.com/vendors/nantong-guangyuan-chemical-gyc", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Heman Peptide (HM)", "website": "", "vendor_type": "raws",
+      "sourcing_notes": "Chinese raws manufacturer sold direct; mid-tier reputation. City not disclosed. Products: GHK-Cu, Tirzepatide, Retatrutide.",
+      "publishes_coa": "unknown",
+      "community_score": null, "community_notes": "Finnrick profile exists; overall score not captured. Direct China purchase risk applies.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/heman-peptide-hm",
+      "results": [],
+      "sources": [{"title": "Finnrick - Heman Peptide (HM)", "url": "https://www.finnrick.com/vendors/heman-peptide-hm", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Wuhan Newtop Biotech", "website": "", "vendor_type": "raws",
+      "sourcing_notes": "Chinese raws manufacturer (Wuhan), sold direct. Products: Retatrutide, GHK-Cu.",
+      "publishes_coa": "partial",
+      "community_score": 0, "community_notes": "Finnrick C ('Okay') for Retatrutide, Unrated for GHK-Cu. Quantity/fill inconsistency: Reta fills -1% to +22%; one GHK-Cu underfilled -30%.",
+      "agg_score": null, "agg_tests": 5, "agg_source_name": "Finnrick", "agg_source_url": "https://www.finnrick.com/vendors/wuhan-newtop-biotech",
+      "results": [{"peptide": "Retatrutide", "purity_pct": 99.7, "tests_count": 5, "test_date": "2026-03-01", "source_name": "Finnrick", "source_url": "https://www.finnrick.com/vendors/wuhan-newtop-biotech", "notes": "Purity 99.60-99.95% but fill inconsistency (-1% to +22%)."}],
+      "sources": [{"title": "Finnrick - Wuhan Newtop", "url": "https://www.finnrick.com/vendors/wuhan-newtop-biotech", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Qingdao Sigma Chemical (QSC)", "website": "", "vendor_type": "raws",
+      "sourcing_notes": "Qingdao-based trading/distribution house; a major gray-market source named in WSJ coverage. Orders via email/WhatsApp (reps 'Tracy'/'Irene'); 30-50% below US-domestic pricing. Many Western brands are believed to source here, but no confirmed brand pairings exist.",
+      "publishes_coa": "partial",
+      "community_score": 0.1, "community_notes": "Claims >=98% (some '99% pharma-grade'); Janoshik third-party tests generally support claims. Risks: communication delays, shipping inconsistency, no recourse.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [{"peptide": "(vendor-claimed, Janoshik-supported)", "purity_pct": 98, "tests_count": 1, "test_date": "2026-04-01", "source_name": "Community / Janoshik", "source_url": "https://glp1forum.com/threads/qingdao-sigma-chemical-co-ltd-qsc.123/", "notes": "Claimed >=98%; broadly supported by Janoshik tests.", "lab_name": "Janoshik Analytical"}],
+      "sources": [{"title": "GLP1Forum - QSC thread", "url": "https://glp1forum.com/threads/qingdao-sigma-chemical-co-ltd-qsc.123/", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Baohua Dongnuo Biotechnology (BDB)", "website": "", "vendor_type": "raws",
+      "sourcing_notes": "Chinese manufacturer listed among direct-to-consumer sellers on gray.guide 'verified vendors'. Upstream source sold direct rather than via a Western repackager.",
+      "publishes_coa": "unknown",
+      "community_score": null, "community_notes": "Direct China purchase risk (customs, QC, recourse). Limited independent testing signal found.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [],
+      "sources": [{"title": "gray.guide - verified vendors (sourcing)", "url": "https://gray.guide/sourcing-details/verified-vendors", "retrieved_at": "2026-07-25"}]
+    },
+    {
+      "name": "Noble Dragons (Alex Wu)", "website": "", "vendor_type": "raws",
+      "sourcing_notes": "Chinese direct-to-consumer seller (rep 'Alex Wu') listed on gray.guide 'verified vendors'. Upstream source sold direct.",
+      "publishes_coa": "unknown",
+      "community_score": null, "community_notes": "Direct China purchase risk applies. Limited independent testing signal found.",
+      "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
+      "results": [],
+      "sources": [{"title": "gray.guide - verified vendors (sourcing)", "url": "https://gray.guide/sourcing-details/verified-vendors", "retrieved_at": "2026-07-25"}]
+    }
+  ]
+}
