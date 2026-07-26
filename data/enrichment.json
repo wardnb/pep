@@ -1489,16 +1489,17 @@
     {
       "vendor_name": "Peptidology",
       "peptide": "Retatrutide",
-      "purity_pct": 99.8,
+      "purity_pct": 99.36,
+      "dosage_accuracy_pct": 105.7,
       "heavy_metals_pass": 1,
       "sterility_pass": 1,
       "endotoxin_pass": 1,
-      "tests_count": 1,
-      "test_date": "2026-06-10",
+      "tests_count": 3,
+      "test_date": "2026-06-09",
       "lab_name": "Vanguard Laboratory",
-      "source_name": "Vanguard + Eagle COA (7-point)",
-      "source_url": "https://peptidology.co/certificates/",
-      "notes": "Lot 1675: purity + ICP-MS heavy metals + USP<71> sterility + endotoxin, all pass."
+      "source_name": "Vanguard + Eagle COA (Batch 1691, public)",
+      "source_url": "https://peptidology.co/wp-content/uploads/2026/06/Batch-1691-GLP3-99.36-10.59mg-VanguardEagle.pdf",
+      "notes": "3 vials 99.36/99.31/99.41%, ~10.6mg fill; Pb/As/Cd/Hg/Cr all Non-Detect; USP<71> sterility Pass; endotoxin <5 EU/mg. Publicly downloadable PDF."
     },
     {
       "vendor_name": "Peptidology",

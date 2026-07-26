@@ -194,7 +194,6 @@ RETA_MEASURED = [
 # --- Peptidology full-panel Vanguard+Eagle COAs (real values; heavy metals +
 #     sterility + endotoxin all pass). (peptide, purity, date, lot) ---
 PEPTIDOLOGY_VANGUARD = [
-    ("Retatrutide", 99.8, "2026-06-10", "1675"),   # GLP3-R
     ("PNC-27", 99.66, "2026-03-09", "1670"),
     ("Semaglutide", 99.79, "2026-07-12", "1711"),  # GLP1
     ("BPC-157", 99.56, "2026-06-29", "1696"),
@@ -340,6 +339,16 @@ def build():
         "test_date": date, "lab_name": "Janoshik Analytical",
         "source_name": f"Janoshik (verify key {key})", "source_url": url,
         "notes": "Vendor-published Janoshik COA with real verification key.",
+    })
+    # Peptidology Retatrutide — verified public COA (Batch 1691, Vanguard+Eagle).
+    peptide_tests.append({
+        "vendor_name": "Peptidology", "peptide": "Retatrutide", "purity_pct": 99.36,
+        "dosage_accuracy_pct": 105.7, "heavy_metals_pass": 1, "sterility_pass": 1,
+        "endotoxin_pass": 1, "tests_count": 3, "test_date": "2026-06-09",
+        "lab_name": "Vanguard Laboratory",
+        "source_name": "Vanguard + Eagle COA (Batch 1691, public)",
+        "source_url": "https://peptidology.co/wp-content/uploads/2026/06/Batch-1691-GLP3-99.36-10.59mg-VanguardEagle.pdf",
+        "notes": "3 vials 99.36/99.31/99.41%, ~10.6mg fill; Pb/As/Cd/Hg/Cr all Non-Detect; USP<71> sterility Pass; endotoxin <5 EU/mg. Publicly downloadable PDF.",
     })
     # Peptidology full-panel Vanguard+Eagle (heavy metals + sterility + endotoxin all pass).
     for peptide, purity, date, lot in PEPTIDOLOGY_VANGUARD:
