@@ -90,9 +90,14 @@ def apply_enrichment() -> None:
             v = {**v, "slug": _slug(v["name"])}
             upsert_vendor(conn, v)
 
-        # Labs referenced by enrichment rows (so lab_id + accreditation resolve).
-        for lab_name in {r.get("lab_name") for r in enr.get("peptide_tests", []) if r.get("lab_name")}:
-            upsert_lab(conn, name=lab_name, accredited=0)
+        # Labs referenced by enrichment rows. Insert new ones WITHOUT clobbering
+        # the accreditation of labs already seeded (e.g. Vanguard = accredited).
+        existing = {r["name"] for r in conn.execute("SELECT name FROM labs").fetchall()}
+        accred = {l["name"]: l.get("accredited", 0) for l in enr.get("extra_labs", [])}
+        needed = {r.get("lab_name") for r in enr.get("peptide_tests", []) if r.get("lab_name")}
+        for lab_name in needed:
+            if lab_name not in existing:
+                upsert_lab(conn, name=lab_name, accredited=accred.get(lab_name, 0))
         lab_ids = {r["name"]: r["id"]
                    for r in conn.execute("SELECT id, name FROM labs").fetchall()}
 

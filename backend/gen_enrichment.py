@@ -147,7 +147,82 @@ NEW_VENDORS = [
     {"name": "American Peptides (US)", "website": "https://americanpeptides.us", "vendor_type": "consumer",
      "publishes_coa": "yes", "community_score": None,
      "community_notes": "Third-party results via Bioviridian (Peptigrity) with endotoxin passes."},
+    {"name": "Spark Peptide", "website": "https://sparkpeptide.com", "vendor_type": "consumer",
+     "publishes_coa": "yes", "community_score": 0.3,
+     "community_notes": "Sole analytical partner is Kovera Labs (FDA-audited, ISO); 21+ published batches 99.08-99.88% with full ICP-MS heavy-metals + sterility + endotoxin panels."},
 ]
+
+# Extra labs referenced below (accreditation where known).
+EXTRA_LABS = [
+    ("Eagle Analytical Services", 1),   # ISO 17025, Houston TX (Peptidology 2nd lab)
+    ("TrustPointe Analytics", 0),
+]
+
+# --- kold.us: 15 AccuVerify-recovered lots (real measured purity). G3-R handled
+#     separately in KOLD_RETA. (peptide, purity, code, lot, date) ---
+KOLD_LOTS = [
+    ("Semaglutide", 99.57, "2STS-XKV4", "1050", "2026-03-04"),
+    ("TB-500", 99.1, "UQFY-B8L7", "1026", "2026-02-25"),
+    ("Semax", 99.57, "DTCD-P2WN", "1220", "2026-05-09"),
+    ("KPV", 99.66, "D8Q6-6BYB", "1580", "2026-04-20"),
+    ("Selank", 99.81, "7NTD-FMFC", "1230", "2026-05-09"),
+    ("PT-141", 99.92, "D6ZU-FF75", "1250", "2026-05-09"),
+    ("Oxytocin", 95.45, "5R49-UQN8", "9010", "2026-05-14"),
+    ("AOD-9604", 99.727, "B6V5-M7VF", "1060", "2026-03-04"),
+    ("CJC-1295", 92.35, "Q8BJ-XW7B", "1300", "2026-04-20"),   # with DAC — notably low
+    ("IGF-1 LR3", 95.07, "27KE-ZLUX", "1400", "2026-04-02"),
+    ("Sermorelin", 99.08, "7FNA-U7RL", "1800", "2026-04-17"),
+    ("Thymosin Alpha-1", 99.18, "QKKA-2RUL", "1240", "2026-05-09"),
+    ("GHK-Cu", 100.0, "4BA3-3V9Z", "5566", "2026-02-24"),
+]
+
+# --- Real MEASURED Retatrutide purity for top vendors (Finnrick free per-cert
+#     pages show real HPLC %, but the lab is anonymized as "Lab E/G"). One
+#     representative recent value per vendor. (vendor, purity, date) ---
+FINN_LAB = "Finnrick test network (lab anonymized)"
+RETA_MEASURED = [
+    ("SRY Labs", 99.85, "2025-10-30"),
+    ("Peptide Partners", 99.90, "2026-06-16"),
+    ("Zenith Jove Peptide", 99.90, "2026-05-06"),
+    ("Inno Peptides", 99.90, "2026-05-11"),
+    ("Chimera Peptides", 99.85, "2026-05-25"),
+    ("Amino Lair", 99.90, "2026-07-13"),
+    ("Marvel Pep", 99.85, "2026-07-13"),
+    ("Guangzhou Jeep Biotechnology (JEEP)", 99.90, "2026-07-20"),
+]
+
+# --- Peptidology full-panel Vanguard+Eagle COAs (real values; heavy metals +
+#     sterility + endotoxin all pass). (peptide, purity, date, lot) ---
+PEPTIDOLOGY_VANGUARD = [
+    ("Retatrutide", 99.8, "2026-06-10", "1675"),   # GLP3-R
+    ("PNC-27", 99.66, "2026-03-09", "1670"),
+    ("Semaglutide", 99.79, "2026-07-12", "1711"),  # GLP1
+    ("BPC-157", 99.56, "2026-06-29", "1696"),
+    ("GHK-Cu", 99.8, "2026-05-22", "1682"),
+    ("CJC-1295", 99.8, "2026-07-17", "1709"),
+    ("Selank", 99.8, "2026-06-23", "1700"),
+]
+
+# --- Kovera COAs published by the vendors themselves (heavy metals + sterility).
+#     (vendor, peptide, purity, hm_pass, ster_pass, endo_pass, date, url) ---
+KOVERA_ROWS = [
+    ("Peptide Partners", "5-Amino-1MQ", 99.782, 1, 1, 1, "2026-06-20",
+     "https://peptide.partners/wp-content/uploads/2026/06/KOV_5-Amino-1MQ_AM202604_HeavyMetals-1.pdf"),
+    ("Peptide Partners", "NAD+", 99.956, 1, None, 1, "2026-02-07",
+     "https://peptide.partners/wp-content/uploads/2026/02/KOV_NADB_NDB202601_Coa.pdf"),
+    ("Peptide Partners", "(Klow blend)", 99.855, 1, 1, 1, "2026-04-21",
+     "https://peptide.partners/wp-content/uploads/2026/05/Kov_Klow_KW202604_COA.pdf"),
+    ("Spark Peptide", "Retatrutide", 99.611, 1, 1, 1, "2026-06-01",
+     "https://sparkpeptide.com/wp-content/uploads/2026/06/Retatrutide_SP-260222-GLP3R20_COA.pdf"),
+    ("Spark Peptide", "BPC-157", 99.877, None, None, None, "2026-06-01",
+     "https://sparkpeptide.com/wp-content/uploads/2026/06/BPC-157_SP-260227-BPC5_COA.pdf"),
+    ("Ascend Science", "(KLOW blend)", 99.71, 1, 1, 1, "2026-07-09",
+     "https://ascend.science/product/klow-80mg"),
+]
+
+# --- Aavant Research: real Janoshik-attributed Retatrutide (verify key). ---
+AAVANT_JANOSHIK = ("Aavant Research", "Retatrutide", 99.68, "2025-11-12",
+                   "UP96CUWJ7IFV", "https://aavantpeptides.com/test-results")
 
 # Peptigrity measured-purity rows: (vendor, peptide, purity, lab, date, endotoxin_pass)
 PG = "Peptigrity"
@@ -240,6 +315,52 @@ def build():
                  "on Accumark's domain.",
     })
 
+    # kold 15 verified Accumark lots (measured purity).
+    for peptide, purity, code, lot, date in KOLD_LOTS:
+        peptide_tests.append({
+            "vendor_name": "KÖLD (kold.us)", "peptide": peptide, "purity_pct": purity,
+            "tests_count": 1, "test_date": date, "lab_name": "Accumark Labs",
+            "source_name": f"Accumark COA (verified {code})",
+            "source_url": f"https://accumarklabs.com/verify?code={code}",
+            "notes": f"Lot {lot}, verified on Accumark's domain.",
+        })
+    # Real measured Retatrutide purity (Finnrick per-cert; lab anonymized).
+    for vendor, purity, date in RETA_MEASURED:
+        peptide_tests.append({
+            "vendor_name": vendor, "peptide": "Retatrutide", "purity_pct": purity,
+            "tests_count": 1, "test_date": date, "lab_name": FINN_LAB,
+            "source_name": "Finnrick per-test certificate",
+            "source_url": "https://www.finnrick.com/",
+            "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+        })
+    # Aavant real Janoshik Retatrutide.
+    v, pep, pur, date, key, url = AAVANT_JANOSHIK
+    peptide_tests.append({
+        "vendor_name": v, "peptide": pep, "purity_pct": pur, "tests_count": 1,
+        "test_date": date, "lab_name": "Janoshik Analytical",
+        "source_name": f"Janoshik (verify key {key})", "source_url": url,
+        "notes": "Vendor-published Janoshik COA with real verification key.",
+    })
+    # Peptidology full-panel Vanguard+Eagle (heavy metals + sterility + endotoxin all pass).
+    for peptide, purity, date, lot in PEPTIDOLOGY_VANGUARD:
+        peptide_tests.append({
+            "vendor_name": "Peptidology", "peptide": peptide, "purity_pct": purity,
+            "heavy_metals_pass": 1, "sterility_pass": 1, "endotoxin_pass": 1,
+            "tests_count": 1, "test_date": date, "lab_name": "Vanguard Laboratory",
+            "source_name": "Vanguard + Eagle COA (7-point)",
+            "source_url": "https://peptidology.co/certificates/",
+            "notes": f"Lot {lot}: purity + ICP-MS heavy metals + USP<71> sterility + endotoxin, all pass.",
+        })
+    # Kovera vendor-published rows (heavy metals + sterility).
+    for vendor, peptide, purity, hm, ster, endo, date, url in KOVERA_ROWS:
+        peptide_tests.append({
+            "vendor_name": vendor, "peptide": peptide, "purity_pct": purity,
+            "heavy_metals_pass": hm, "sterility_pass": ster, "endotoxin_pass": endo,
+            "tests_count": 1, "test_date": date, "lab_name": "Kovera Labs",
+            "source_name": "Kovera Labs COA (vendor-published)", "source_url": url,
+            "notes": "ICP-MS heavy metals (Pb/As/Cd/Hg) within limits where tested.",
+        })
+
     data = {
         "_meta": {"generated": "2026-07-25",
                   "note": "Finnrick per-peptide ratings are public composites (purity paywalled); "
@@ -249,6 +370,7 @@ def build():
             for (n, s, t, p, f) in VENDOR_UPDATES
         ],
         "new_vendors": NEW_VENDORS,
+        "extra_labs": [{"name": n, "accredited": a} for (n, a) in EXTRA_LABS],
         "peptide_tests": peptide_tests,
     }
     OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False))
