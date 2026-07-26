@@ -1,0 +1,1220 @@
+{
+  "_meta": {
+    "generated": "2026-07-25",
+    "note": "Finnrick per-peptide ratings are public composites (purity paywalled); Peptigrity rows are measured HPLC purity; kold row is a verified Accumark COA."
+  },
+  "vendor_updates": [
+    {
+      "name": "Peptide Sciences",
+      "agg_score": 61,
+      "agg_tests": 131,
+      "pass_count": 79,
+      "fail_count": 52
+    },
+    {
+      "name": "Paradigm Peptides",
+      "agg_score": 86,
+      "agg_tests": 18,
+      "pass_count": 17,
+      "fail_count": 1
+    },
+    {
+      "name": "Peptide Partners",
+      "agg_score": 64,
+      "agg_tests": 77,
+      "pass_count": 52,
+      "fail_count": 25
+    },
+    {
+      "name": "SRY Labs",
+      "agg_score": 61,
+      "agg_tests": 121,
+      "pass_count": 78,
+      "fail_count": 43
+    },
+    {
+      "name": "Zenith Jove Peptide",
+      "agg_score": 77,
+      "agg_tests": 59,
+      "pass_count": 51,
+      "fail_count": 8
+    },
+    {
+      "name": "Amino Lair",
+      "agg_score": 87,
+      "agg_tests": 18,
+      "pass_count": 17,
+      "fail_count": 1
+    },
+    {
+      "name": "SubQ Society",
+      "agg_score": 84,
+      "agg_tests": 11,
+      "pass_count": 9,
+      "fail_count": 2
+    },
+    {
+      "name": "Chimera Peptides",
+      "agg_score": 86,
+      "agg_tests": 20,
+      "pass_count": 19,
+      "fail_count": 1
+    },
+    {
+      "name": "Orbitrex Peptides",
+      "agg_score": 84,
+      "agg_tests": 30,
+      "pass_count": 25,
+      "fail_count": 5
+    },
+    {
+      "name": "Aavant Research",
+      "agg_score": 87,
+      "agg_tests": 18,
+      "pass_count": 18,
+      "fail_count": 0
+    },
+    {
+      "name": "Inno Peptides",
+      "agg_score": 89,
+      "agg_tests": 21,
+      "pass_count": 21,
+      "fail_count": 0
+    },
+    {
+      "name": "Marvel Pep",
+      "agg_score": 88,
+      "agg_tests": 16,
+      "pass_count": 15,
+      "fail_count": 1
+    },
+    {
+      "name": "Retalux",
+      "agg_score": 86,
+      "agg_tests": 15,
+      "pass_count": 15,
+      "fail_count": 0
+    },
+    {
+      "name": "Kits4less",
+      "agg_score": 85,
+      "agg_tests": 7,
+      "pass_count": 7,
+      "fail_count": 0
+    },
+    {
+      "name": "BioLongevity Labs",
+      "agg_score": 74,
+      "agg_tests": 33,
+      "pass_count": 25,
+      "fail_count": 8
+    },
+    {
+      "name": "Prime Peptides",
+      "agg_score": 55,
+      "agg_tests": 19,
+      "pass_count": 7,
+      "fail_count": 12
+    },
+    {
+      "name": "Guangzhou Jeep Biotechnology (JEEP)",
+      "agg_score": 87,
+      "agg_tests": 36,
+      "pass_count": 32,
+      "fail_count": 4
+    },
+    {
+      "name": "Wuhan Newtop Biotech",
+      "agg_score": 86,
+      "agg_tests": 6,
+      "pass_count": 6,
+      "fail_count": 0
+    }
+  ],
+  "new_vendors": [
+    {
+      "name": "Ascend Science",
+      "website": "https://ascend.science",
+      "vendor_type": "consumer",
+      "publishes_coa": "yes",
+      "community_score": 0.3,
+      "community_notes": "34+ individual third-party HPLC results via Peptigrity (Kovera Labs), consistently 98.5-99.8% across a very broad catalog. Strong testing transparency."
+    },
+    {
+      "name": "Modified Aminos",
+      "website": "https://modifiedaminos.shop",
+      "vendor_type": "consumer",
+      "publishes_coa": "yes",
+      "community_score": 0.1,
+      "community_notes": "Broad catalog third-party tested via Ethos Analytics (Peptigrity), ~99% with endotoxin passes."
+    },
+    {
+      "name": "BioPeptiTech",
+      "website": "https://biopeptitech.com",
+      "vendor_type": "consumer",
+      "publishes_coa": "yes",
+      "community_score": 0.1,
+      "community_notes": "Third-party tested via Accurate Test Lab (Peptigrity); 97-99.9% depending on peptide."
+    },
+    {
+      "name": "American Peptides (US)",
+      "website": "https://americanpeptides.us",
+      "vendor_type": "consumer",
+      "publishes_coa": "yes",
+      "community_score": null,
+      "community_notes": "Third-party results via Bioviridian (Peptigrity) with endotoxin passes."
+    }
+  ],
+  "peptide_tests": [
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 92,
+      "tests_count": 6,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "Semaglutide",
+      "peptide_rating": 81,
+      "tests_count": 15,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "PT-141",
+      "peptide_rating": 79,
+      "tests_count": 6,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "Ipamorelin",
+      "peptide_rating": 78,
+      "tests_count": 9,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 68,
+      "tests_count": 17,
+      "test_date": "2026-07-01",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "BPC-157",
+      "peptide_rating": 61,
+      "tests_count": 13,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "Retatrutide",
+      "peptide_rating": 56,
+      "tests_count": 41,
+      "test_date": "2026-06-17",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "Melanotan II",
+      "peptide_rating": 54,
+      "tests_count": 10,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "Tesamorelin",
+      "peptide_rating": 39,
+      "tests_count": 3,
+      "test_date": "2026-04-28",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Peptide Sciences",
+      "peptide": "CJC-1295",
+      "peptide_rating": 16,
+      "tests_count": 11,
+      "test_date": "2026-05-06",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+    },
+    {
+      "vendor_name": "Paradigm Peptides",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 88,
+      "tests_count": 10,
+      "test_date": "2026-01-26",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/paradigm-peptide"
+    },
+    {
+      "vendor_name": "Paradigm Peptides",
+      "peptide": "Retatrutide",
+      "peptide_rating": 85,
+      "tests_count": 8,
+      "test_date": "2026-04-30",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/paradigm-peptide"
+    },
+    {
+      "vendor_name": "Peptide Partners",
+      "peptide": "Retatrutide",
+      "peptide_rating": 91,
+      "tests_count": 23,
+      "test_date": "2026-06-16",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-partners"
+    },
+    {
+      "vendor_name": "Peptide Partners",
+      "peptide": "Ipamorelin",
+      "peptide_rating": 83,
+      "tests_count": 7,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-partners"
+    },
+    {
+      "vendor_name": "Peptide Partners",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 80,
+      "tests_count": 7,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-partners"
+    },
+    {
+      "vendor_name": "Peptide Partners",
+      "peptide": "BPC-157",
+      "peptide_rating": 52,
+      "tests_count": 9,
+      "test_date": "2026-06-22",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-partners"
+    },
+    {
+      "vendor_name": "Peptide Partners",
+      "peptide": "Tesamorelin",
+      "peptide_rating": 50,
+      "tests_count": 11,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-partners"
+    },
+    {
+      "vendor_name": "Peptide Partners",
+      "peptide": "CJC-1295",
+      "peptide_rating": 37,
+      "tests_count": 9,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-partners"
+    },
+    {
+      "vendor_name": "Peptide Partners",
+      "peptide": "TB-500",
+      "peptide_rating": 31,
+      "tests_count": 11,
+      "test_date": "2026-03-04",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/peptide-partners"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 92,
+      "tests_count": 35,
+      "test_date": "2026-05-06",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "Retatrutide",
+      "peptide_rating": 91,
+      "tests_count": 31,
+      "test_date": "2026-06-08",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 68,
+      "tests_count": 7,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "Semaglutide",
+      "peptide_rating": 65,
+      "tests_count": 4,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "PT-141",
+      "peptide_rating": 52,
+      "tests_count": 2,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "Cagrilintide",
+      "peptide_rating": 50,
+      "tests_count": 8,
+      "test_date": "2026-05-08",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "BPC-157",
+      "peptide_rating": 43,
+      "tests_count": 7,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "Sermorelin",
+      "peptide_rating": 40,
+      "tests_count": 3,
+      "test_date": "2026-03-06",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "TB-500",
+      "peptide_rating": 36,
+      "tests_count": 8,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "Tesamorelin",
+      "peptide_rating": 32,
+      "tests_count": 12,
+      "test_date": "2026-03-02",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "SRY Labs",
+      "peptide": "CJC-1295",
+      "peptide_rating": 27,
+      "tests_count": 4,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+    },
+    {
+      "vendor_name": "Zenith Jove Peptide",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 92,
+      "tests_count": 5,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/zenith-jove-peptide-zj"
+    },
+    {
+      "vendor_name": "Zenith Jove Peptide",
+      "peptide": "Retatrutide",
+      "peptide_rating": 91,
+      "tests_count": 21,
+      "test_date": "2026-07-01",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/zenith-jove-peptide-zj"
+    },
+    {
+      "vendor_name": "Zenith Jove Peptide",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 81,
+      "tests_count": 22,
+      "test_date": "2026-05-05",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/zenith-jove-peptide-zj"
+    },
+    {
+      "vendor_name": "Zenith Jove Peptide",
+      "peptide": "BPC-157",
+      "peptide_rating": 65,
+      "tests_count": 7,
+      "test_date": "2026-06-08",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/zenith-jove-peptide-zj"
+    },
+    {
+      "vendor_name": "Zenith Jove Peptide",
+      "peptide": "TB-500",
+      "peptide_rating": 39,
+      "tests_count": 4,
+      "test_date": "2026-06-08",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/zenith-jove-peptide-zj"
+    },
+    {
+      "vendor_name": "Amino Lair",
+      "peptide": "Retatrutide",
+      "peptide_rating": 87,
+      "tests_count": 9,
+      "test_date": "2026-07-13",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/amino-lair"
+    },
+    {
+      "vendor_name": "Amino Lair",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 86,
+      "tests_count": 9,
+      "test_date": "2026-06-06",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/amino-lair"
+    },
+    {
+      "vendor_name": "SubQ Society",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 91,
+      "tests_count": 3,
+      "test_date": "2026-03-10",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/subq-society"
+    },
+    {
+      "vendor_name": "SubQ Society",
+      "peptide": "Retatrutide",
+      "peptide_rating": 78,
+      "tests_count": 8,
+      "test_date": "2026-05-08",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/subq-society"
+    },
+    {
+      "vendor_name": "Chimera Peptides",
+      "peptide": "Retatrutide",
+      "peptide_rating": 89,
+      "tests_count": 11,
+      "test_date": "2026-05-25",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/chimera-peptides"
+    },
+    {
+      "vendor_name": "Chimera Peptides",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 83,
+      "tests_count": 9,
+      "test_date": "2026-07-01",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/chimera-peptides"
+    },
+    {
+      "vendor_name": "Orbitrex Peptides",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 91,
+      "tests_count": 5,
+      "test_date": "2026-06-02",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/orbitrex-peptides"
+    },
+    {
+      "vendor_name": "Orbitrex Peptides",
+      "peptide": "Retatrutide",
+      "peptide_rating": 89,
+      "tests_count": 18,
+      "test_date": "2026-06-12",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/orbitrex-peptides"
+    },
+    {
+      "vendor_name": "Orbitrex Peptides",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 79,
+      "tests_count": 5,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/orbitrex-peptides"
+    },
+    {
+      "vendor_name": "Orbitrex Peptides",
+      "peptide": "PT-141",
+      "peptide_rating": 70,
+      "tests_count": 2,
+      "test_date": "2026-07-17",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/orbitrex-peptides"
+    },
+    {
+      "vendor_name": "Aavant Research",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 89,
+      "tests_count": 11,
+      "test_date": "2026-05-20",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/aavant-research"
+    },
+    {
+      "vendor_name": "Aavant Research",
+      "peptide": "Retatrutide",
+      "peptide_rating": 85,
+      "tests_count": 7,
+      "test_date": "2026-03-03",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/aavant-research"
+    },
+    {
+      "vendor_name": "Inno Peptides",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 92,
+      "tests_count": 4,
+      "test_date": "2026-05-13",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/inno-peptides"
+    },
+    {
+      "vendor_name": "Inno Peptides",
+      "peptide": "Retatrutide",
+      "peptide_rating": 89,
+      "tests_count": 10,
+      "test_date": "2026-07-17",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/inno-peptides"
+    },
+    {
+      "vendor_name": "Inno Peptides",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 86,
+      "tests_count": 7,
+      "test_date": "2026-07-13",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/inno-peptides"
+    },
+    {
+      "vendor_name": "Marvel Pep",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 91,
+      "tests_count": 4,
+      "test_date": "2026-07-13",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/marvel-pep"
+    },
+    {
+      "vendor_name": "Marvel Pep",
+      "peptide": "Retatrutide",
+      "peptide_rating": 85,
+      "tests_count": 12,
+      "test_date": "2026-07-13",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/marvel-pep"
+    },
+    {
+      "vendor_name": "Retalux",
+      "peptide": "SS-31",
+      "peptide_rating": 91,
+      "tests_count": 4,
+      "test_date": "2026-06-16",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/retalux"
+    },
+    {
+      "vendor_name": "Retalux",
+      "peptide": "Retatrutide",
+      "peptide_rating": 86,
+      "tests_count": 7,
+      "test_date": "2026-07-20",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/retalux"
+    },
+    {
+      "vendor_name": "Retalux",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 83,
+      "tests_count": 4,
+      "test_date": "2026-06-26",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/retalux"
+    },
+    {
+      "vendor_name": "Kits4less",
+      "peptide": "Retatrutide",
+      "peptide_rating": 85,
+      "tests_count": 7,
+      "test_date": "2026-03-03",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/kits4less"
+    },
+    {
+      "vendor_name": "BioLongevity Labs",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 91,
+      "tests_count": 4,
+      "test_date": "2025-12-06",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/biolongevity-labs"
+    },
+    {
+      "vendor_name": "BioLongevity Labs",
+      "peptide": "Retatrutide",
+      "peptide_rating": 80,
+      "tests_count": 11,
+      "test_date": "2025-07-23",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/biolongevity-labs"
+    },
+    {
+      "vendor_name": "BioLongevity Labs",
+      "peptide": "Ipamorelin",
+      "peptide_rating": 76,
+      "tests_count": 4,
+      "test_date": null,
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/biolongevity-labs"
+    },
+    {
+      "vendor_name": "BioLongevity Labs",
+      "peptide": "PT-141",
+      "peptide_rating": 71,
+      "tests_count": 3,
+      "test_date": "2025-08-12",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/biolongevity-labs"
+    },
+    {
+      "vendor_name": "BioLongevity Labs",
+      "peptide": "BPC-157",
+      "peptide_rating": 47,
+      "tests_count": 11,
+      "test_date": "2025-11-22",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/biolongevity-labs"
+    },
+    {
+      "vendor_name": "Prime Peptides",
+      "peptide": "Ipamorelin",
+      "peptide_rating": 78,
+      "tests_count": 5,
+      "test_date": "2025-06-13",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/prime-peptides"
+    },
+    {
+      "vendor_name": "Prime Peptides",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 69,
+      "tests_count": 5,
+      "test_date": "2025-07-10",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/prime-peptides"
+    },
+    {
+      "vendor_name": "Prime Peptides",
+      "peptide": "BPC-157",
+      "peptide_rating": 40,
+      "tests_count": 6,
+      "test_date": "2025-07-10",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/prime-peptides"
+    },
+    {
+      "vendor_name": "Prime Peptides",
+      "peptide": "CJC-1295",
+      "peptide_rating": 29,
+      "tests_count": 3,
+      "test_date": "2025-07-03",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/prime-peptides"
+    },
+    {
+      "vendor_name": "Guangzhou Jeep Biotechnology (JEEP)",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 92,
+      "tests_count": 5,
+      "test_date": "2026-07-13",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/guangzhou-jeep-biotechnology-jeep"
+    },
+    {
+      "vendor_name": "Guangzhou Jeep Biotechnology (JEEP)",
+      "peptide": "Tirzepatide",
+      "peptide_rating": 87,
+      "tests_count": 15,
+      "test_date": "2026-07-20",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/guangzhou-jeep-biotechnology-jeep"
+    },
+    {
+      "vendor_name": "Guangzhou Jeep Biotechnology (JEEP)",
+      "peptide": "Retatrutide",
+      "peptide_rating": 84,
+      "tests_count": 16,
+      "test_date": "2026-07-20",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/guangzhou-jeep-biotechnology-jeep"
+    },
+    {
+      "vendor_name": "Wuhan Newtop Biotech",
+      "peptide": "GHK-Cu",
+      "peptide_rating": 89,
+      "tests_count": 1,
+      "test_date": "2026-03-07",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/wuhan-newtop-biotech"
+    },
+    {
+      "vendor_name": "Wuhan Newtop Biotech",
+      "peptide": "Retatrutide",
+      "peptide_rating": 83,
+      "tests_count": 5,
+      "test_date": "2026-05-08",
+      "source_name": "Finnrick",
+      "source_url": "https://www.finnrick.com/vendors/wuhan-newtop-biotech"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Semaglutide",
+      "purity_pct": 99.66,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Semaglutide",
+      "purity_pct": 98.5,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Tesamorelin",
+      "purity_pct": 99.63,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Tesamorelin",
+      "purity_pct": 99.54,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "CJC-1295",
+      "purity_pct": 99.5,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "CJC-1295",
+      "purity_pct": 99.42,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "BPC-157",
+      "purity_pct": 99.61,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "TB-500",
+      "purity_pct": 99.52,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Ipamorelin",
+      "purity_pct": 99.53,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "GHK-Cu",
+      "purity_pct": 99.58,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "PT-141",
+      "purity_pct": 99.43,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Cagrilintide",
+      "purity_pct": 99.64,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "SS-31",
+      "purity_pct": 99.77,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Melanotan II",
+      "purity_pct": 99.54,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "NAD+",
+      "purity_pct": 99.69,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Sermorelin",
+      "purity_pct": 99.55,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Epithalon",
+      "purity_pct": 99.83,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Ascend Science",
+      "peptide": "Thymosin Alpha-1",
+      "purity_pct": 99.6,
+      "lab_name": "Kovera Labs",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Modified Aminos",
+      "peptide": "Tesamorelin",
+      "purity_pct": 99.0,
+      "lab_name": "Ethos Analytics",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Modified Aminos",
+      "peptide": "TB-500",
+      "purity_pct": 99.0,
+      "lab_name": "Ethos Analytics",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Modified Aminos",
+      "peptide": "SS-31",
+      "purity_pct": 99.0,
+      "lab_name": "Ethos Analytics",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Modified Aminos",
+      "peptide": "SEMAX",
+      "purity_pct": 99.0,
+      "lab_name": "Ethos Analytics",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Modified Aminos",
+      "peptide": "SELANK",
+      "purity_pct": 99.0,
+      "lab_name": "Ethos Analytics",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Modified Aminos",
+      "peptide": "PT-141",
+      "purity_pct": 99.0,
+      "lab_name": "Ethos Analytics",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Modified Aminos",
+      "peptide": "MOTS-C",
+      "purity_pct": 99.0,
+      "lab_name": "Ethos Analytics",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Modified Aminos",
+      "peptide": "KPV",
+      "purity_pct": 99.0,
+      "lab_name": "Ethos Analytics",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "BioPeptiTech",
+      "peptide": "Tirzepatide",
+      "purity_pct": 99.5,
+      "lab_name": "Accurate Test Lab",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "BioPeptiTech",
+      "peptide": "PT-141",
+      "purity_pct": 99.92,
+      "lab_name": "Accurate Test Lab",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "BioPeptiTech",
+      "peptide": "SEMAX",
+      "purity_pct": 99.68,
+      "lab_name": "Accurate Test Lab",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "BioPeptiTech",
+      "peptide": "Thymalin",
+      "purity_pct": 99.94,
+      "lab_name": "Accurate Test Lab",
+      "test_date": "2026-07-06",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "BioPeptiTech",
+      "peptide": "DSIP",
+      "purity_pct": 97.1,
+      "lab_name": "Accurate Test Lab",
+      "test_date": "2026-07-09",
+      "endotoxin_pass": null,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "American Peptides (US)",
+      "peptide": "GHK-Cu",
+      "purity_pct": 99.8,
+      "lab_name": "Bioviridian",
+      "test_date": "2026-07-07",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "American Peptides (US)",
+      "peptide": "Retatrutide/Cagrilintide",
+      "purity_pct": 99.9,
+      "lab_name": "Bioviridian",
+      "test_date": "2026-07-07",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Felix Chemical Supply",
+      "peptide": "Tesamorelin",
+      "purity_pct": 99.86,
+      "lab_name": "Freedom Diagnostics Testing",
+      "test_date": "2026-04-26",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Felix Chemical Supply",
+      "peptide": "NAD+",
+      "purity_pct": 99.8,
+      "lab_name": "Freedom Diagnostics Testing",
+      "test_date": "2026-04-26",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Felix Chemical Supply",
+      "peptide": "GHK-Cu",
+      "purity_pct": 99.81,
+      "lab_name": "Freedom Diagnostics Testing",
+      "test_date": "2026-04-26",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "Felix Chemical Supply",
+      "peptide": "BPC-157",
+      "purity_pct": 98.74,
+      "lab_name": "Freedom Diagnostics Testing",
+      "test_date": "2026-04-26",
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "source_name": "Peptigrity",
+      "source_url": "https://peptigrity.com/lab-tests"
+    },
+    {
+      "vendor_name": "KÖLD (kold.us)",
+      "peptide": "Retatrutide",
+      "purity_pct": 99.9,
+      "dosage_accuracy_pct": 103.7,
+      "endotoxin_pass": 1,
+      "tests_count": 1,
+      "test_date": "2026-06-16",
+      "source_name": "Accumark Labs COA (verified WYGR-AJDT)",
+      "source_url": "https://accumarklabs.com/verify?code=WYGR-AJDT",
+      "lab_name": "Accumark Labs",
+      "notes": "G3-R 10mg lot 1032: HPLC 99.9% (spec >98%), fill 10.37/10mg, endotoxin PASS (<5 EU/mL); sterility PENDING, no heavy metals. Independently verified on Accumark's domain."
+    }
+  ]
+}

@@ -64,6 +64,52 @@ def seed(reset: bool = False) -> None:
 
     print(f"Seeded {vendor_count} vendors, {result_count} test results, "
           f"{len(data.get('labs', []))} labs into {DB_PATH}")
+    apply_enrichment()
+
+
+ENRICH_PATH = Path(__file__).resolve().parent.parent / "data" / "enrichment.json"
+
+
+def apply_enrichment() -> None:
+    """Apply data/enrichment.json: score corrections, new vendors, per-peptide rows."""
+    if not ENRICH_PATH.exists():
+        return
+    enr = json.loads(ENRICH_PATH.read_text())
+    with get_connection() as conn:
+        # Score/volume corrections for existing vendors.
+        n_upd = 0
+        for u in enr.get("vendor_updates", []):
+            cur = conn.execute(
+                "UPDATE vendors SET agg_score=?, agg_tests=? WHERE name=?",
+                (u.get("agg_score"), u.get("agg_tests"), u["name"]),
+            )
+            n_upd += cur.rowcount
+
+        # New vendors.
+        for v in enr.get("new_vendors", []):
+            v = {**v, "slug": _slug(v["name"])}
+            upsert_vendor(conn, v)
+
+        # Labs referenced by enrichment rows (so lab_id + accreditation resolve).
+        for lab_name in {r.get("lab_name") for r in enr.get("peptide_tests", []) if r.get("lab_name")}:
+            upsert_lab(conn, name=lab_name, accredited=0)
+        lab_ids = {r["name"]: r["id"]
+                   for r in conn.execute("SELECT id, name FROM labs").fetchall()}
+
+        # Per-peptide test rows.
+        vid_by_name = {r["name"]: r["id"] for r in conn.execute("SELECT id, name FROM vendors").fetchall()}
+        n_rows = skipped = 0
+        for r in enr.get("peptide_tests", []):
+            vid = vid_by_name.get(r["vendor_name"])
+            if not vid:
+                skipped += 1
+                continue
+            add_test_result(conn, vid, r, lab_id=lab_ids.get(r.get("lab_name")))
+            n_rows += 1
+        conn.commit()
+    print(f"Enrichment: {n_upd} vendor corrections, "
+          f"{len(enr.get('new_vendors', []))} new vendors, {n_rows} peptide rows "
+          f"({skipped} skipped for unknown vendor)")
 
 
 def _slug(name: str) -> str:

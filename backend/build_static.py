@@ -59,6 +59,13 @@ def build() -> None:
         details[v["slug"]] = appmod.vendor_detail(v["slug"])
     (api_root / "details.json").write_text(json.dumps(details))
 
+    # Per-peptide selector data: list + a map of peptide -> ranked vendors.
+    peptide_list = appmod.peptides()
+    (api_root / "peptides.json").write_text(json.dumps(peptide_list))
+    by_peptide = {p["name"]: appmod.peptide_detail(p["name"])["vendors"]
+                  for p in peptide_list}
+    (api_root / "by_peptide.json").write_text(json.dumps(by_peptide))
+
     # Emit index.html with the static config injected.
     html = FRONTEND.read_text()
     if "<!--APP_CONFIG-->" in html:

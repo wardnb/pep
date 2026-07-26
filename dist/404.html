@@ -24,6 +24,9 @@
   .controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
   input[type=search] { background: var(--panel); border: 1px solid var(--border);
     color: var(--text); padding: 9px 12px; border-radius: 8px; width: 280px; font-size: 14px; }
+  .pep-select { background: var(--panel); border: 1px solid var(--border); color: var(--text);
+    padding: 9px 12px; border-radius: 8px; font-size: 14px; max-width: 260px; }
+  .pep-select:focus { outline: 1px solid var(--accent); }
   .toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
   .toggle button { background: var(--panel); color: var(--muted); border: none; padding: 8px 12px;
     font-size: 13px; cursor: pointer; }
@@ -83,6 +86,9 @@
 <div class="wrap">
   <div class="controls">
     <input type="search" id="search" placeholder="Search vendors…" />
+    <select id="peptide" class="pep-select" title="View a single peptide">
+      <option value="">All vendors (overall)</option>
+    </select>
     <div class="toggle" id="rankmode" title="How to rank vendors">
       <button data-mode="total" class="on">Rank by score</button>
       <button data-mode="adjusted">Confidence-adjusted</button>
@@ -100,7 +106,7 @@
     </div>
   </div>
   <table id="tbl">
-    <thead>
+    <thead id="thead">
       <tr>
         <th data-k="rank">#</th>
         <th data-k="name">Vendor</th>
@@ -149,6 +155,16 @@ async function getDetail(slug) {
   if (CFG.static) return DETAILS[slug];
   return getJSON(`${CFG.api}/vendors/${slug}`);
 }
+let PEPTIDES = [];   // [{name, vendors, tests}]
+let BYPEP = {};      // static: peptide name -> ranked vendor list
+let peptideView = "";
+async function getPeptides() {
+  return getJSON(`${CFG.api}/peptides${CFG.ext}`);
+}
+async function getPeptideRanking(name) {
+  if (CFG.static) return BYPEP[name] || [];
+  return (await getJSON(`${CFG.api}/peptides/${encodeURIComponent(name)}`)).vendors;
+}
 
 function colorFor(score) {
   if (score === null || score === undefined) return "var(--unknown)";
@@ -171,7 +187,42 @@ function dimScore(v, key) {
   return d ? d.score : null;
 }
 
+const VENDOR_THEAD = `<tr>
+  <th data-k="rank">#</th><th data-k="name">Vendor</th><th data-k="total">Score</th>
+  <th data-k="adjusted">Adjusted</th><th data-k="confidence">Confidence</th>
+  <th data-k="purity_dosage">Purity/Dose</th><th data-k="transparency">Transparency</th>
+  <th data-k="sterility">Sterility</th><th data-k="heavy_metals">Heavy metals</th>
+  <th data-k="num_results">Tests</th></tr>`;
+const PEPTIDE_THEAD = `<tr>
+  <th>#</th><th>Vendor</th><th>Score</th><th>Finnrick rating</th>
+  <th>Measured purity</th><th>Tests</th><th>Latest test</th><th>Source</th></tr>`;
+
+async function renderPeptide() {
+  document.getElementById("thead").innerHTML = PEPTIDE_THEAD;
+  const q = document.getElementById("search").value.toLowerCase();
+  let rows = (await getPeptideRanking(peptideView))
+    .filter(r => r.vendor.toLowerCase().includes(q))
+    .filter(r => typeFilter === "all" || (r.vendor_type || "consumer") === typeFilter);
+  const tbody = document.getElementById("rows");
+  tbody.innerHTML = rows.map((r, i) => `
+    <tr data-slug="${r.slug}">
+      <td class="rank">${i + 1}</td>
+      <td><div class="vname">${r.vendor}${r.vendor_type==="raws"?' <span class="pill" style="border-color:var(--bad);color:var(--bad)">China raws</span>':''}</div></td>
+      <td class="scorecell" style="color:${colorFor(r.score)}">${r.score===null?"—":Math.round(r.score)}</td>
+      <td>${r.rating!=null?`<span style="color:${colorFor(r.rating)}">${r.rating}</span>`:'<span class="conf">—</span>'}</td>
+      <td>${r.purity!=null?`${r.purity}%`:'<span class="conf">—</span>'}</td>
+      <td>${r.tests}</td>
+      <td><span class="conf">${r.latest||"—"}</span></td>
+      <td><span class="conf">${(r.sources||[]).join(", ")||"—"}</span></td>
+    </tr>`).join("") || `<tr><td colspan="8" class="loading">No vendors with ${peptideView} data.</td></tr>`;
+  tbody.querySelectorAll("tr[data-slug]").forEach(tr =>
+    tr.addEventListener("click", () => openDetail(tr.dataset.slug)));
+}
+
 function render() {
+  if (peptideView) { renderPeptide(); return; }
+  document.getElementById("thead").innerHTML = VENDOR_THEAD;
+  bindHeaderSort();
   const q = document.getElementById("search").value.toLowerCase();
   let rows = VENDORS.filter(v => v.name.toLowerCase().includes(q))
                     .filter(v => typeFilter === "all" || (v.vendor_type || "consumer") === typeFilter);
@@ -280,20 +331,41 @@ document.querySelectorAll("#typefilter button").forEach(btn => btn.addEventListe
   typeFilter = btn.dataset.type;   // "all" | "consumer" | "raws"
   render();
 }));
-document.querySelectorAll("th").forEach(th => th.addEventListener("click", () => {
-  const k = th.dataset.k;
-  if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = (k === "name" || k === "rank"); }
+function bindHeaderSort() {
+  document.querySelectorAll("#thead th[data-k]").forEach(th => {
+    th.onclick = () => {
+      const k = th.dataset.k;
+      if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = (k === "name" || k === "rank"); }
+      render();
+    };
+  });
+}
+document.getElementById("peptide").addEventListener("change", e => {
+  peptideView = e.target.value;
   render();
-}));
+});
+
+function populatePeptides() {
+  const sel = document.getElementById("peptide");
+  PEPTIDES.forEach(p => {
+    const o = document.createElement("option");
+    o.value = p.name;
+    o.textContent = `${p.name} — ${p.vendors} vendors, ${p.tests} tests`;
+    sel.appendChild(o);
+  });
+}
 
 async function init() {
   try {
     if (CFG.static) {
       DETAILS = await getJSON(`${CFG.api}/details${CFG.ext}`);
+      BYPEP = await getJSON(`${CFG.api}/by_peptide${CFG.ext}`);
     }
     const meta = await getMeta();
     document.getElementById("disclaimer").textContent = meta.disclaimer;
     VENDORS = await getVendors();
+    PEPTIDES = await getPeptides();
+    populatePeptides();
     render();
   } catch (e) {
     document.getElementById("rows").innerHTML =

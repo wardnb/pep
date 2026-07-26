@@ -18,7 +18,7 @@ from repository import (
     all_results_grouped, get_labs_by_id, get_results_for_vendor,
     get_sources_for_vendor, get_vendor, list_vendors,
 )
-from scoring import DEFAULT_WEIGHTS, score_vendor
+from scoring import DEFAULT_WEIGHTS, purity_to_score, score_vendor
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = PROJECT_ROOT / "frontend"
@@ -124,6 +124,92 @@ def vendor_detail(slug: str) -> dict:
 @app.get("/api/labs")
 def labs() -> list[dict]:
     return list(get_labs_by_id().values())
+
+
+# --------------------------------------------------------------------------- #
+# Per-peptide view
+# --------------------------------------------------------------------------- #
+def _normalize_peptide(name: str) -> Optional[str]:
+    """Canonicalize a peptide label, or None to skip (blends / aggregate rows)."""
+    n = (name or "").strip()
+    if not n or n.startswith("(") or "/" in n:
+        return None
+    low = n.lower()
+    aliases = {
+        "ghk-cu": "GHK-Cu", "bpc-157": "BPC-157", "tb-500": "TB-500",
+        "pt-141": "PT-141", "ss-31": "SS-31", "cjc-1295": "CJC-1295",
+        "cjc-1295 with dac": "CJC-1295", "cjc-1295 without dac": "CJC-1295",
+        "melanotan ii": "Melanotan II", "melanotan i": "Melanotan I",
+        "nad+": "NAD+", "hgh fragment 176-191": "HGH Fragment 176-191",
+    }
+    return aliases.get(low, n)
+
+
+def _peptide_index():
+    grouped = all_results_grouped()
+    vendors = {v["id"]: v for v in list_vendors()}
+    idx: dict = {}
+    for vid, rows in grouped.items():
+        for r in rows:
+            pep = _normalize_peptide(r.get("peptide"))
+            if not pep:
+                continue
+            d = idx.setdefault(pep, {}).setdefault(vid, {
+                "ratings": [], "purities": [], "tests": 0, "dates": [], "sources": set()})
+            if r.get("peptide_rating") is not None:
+                d["ratings"].append(r["peptide_rating"])
+            if r.get("purity_pct") is not None:
+                d["purities"].append(r["purity_pct"])
+            d["tests"] += r.get("tests_count") or 1
+            if r.get("test_date"):
+                d["dates"].append(r["test_date"])
+            if r.get("source_name"):
+                d["sources"].add(r["source_name"])
+    return idx, vendors
+
+
+def _rank_for_peptide(pep: str, idx: dict, vendors: dict) -> list[dict]:
+    out = []
+    for vid, d in idx.get(pep, {}).items():
+        v = vendors.get(vid)
+        if not v:
+            continue
+        rating = max(d["ratings"]) if d["ratings"] else None
+        purity = round(sum(d["purities"]) / len(d["purities"]), 2) if d["purities"] else None
+        score = rating if rating is not None else (purity_to_score(purity) if purity is not None else None)
+        # Volume-weighted adjusted score so a single test can't outrank 30.
+        # Full weight at >= 8 tests; shrink toward a neutral 50 below that.
+        weight = min(d["tests"] / 8.0, 1.0)
+        adj = score * weight + 50 * (1 - weight) if score is not None else None
+        out.append({
+            "vendor": v["name"], "slug": v["slug"], "vendor_type": v["vendor_type"],
+            "score": round(score, 1) if score is not None else None,
+            "adjusted": round(adj, 1) if adj is not None else None,
+            "rating": rating, "purity": purity, "tests": d["tests"],
+            "latest": max(d["dates"]) if d["dates"] else None,
+            "sources": sorted(d["sources"]),
+        })
+    out.sort(key=lambda x: (x["adjusted"] is not None, x["adjusted"] or 0, x["tests"]), reverse=True)
+    for i, row in enumerate(out, 1):
+        row["rank"] = i
+    return out
+
+
+@app.get("/api/peptides")
+def peptides() -> list[dict]:
+    idx, vendors = _peptide_index()
+    out = [{"name": pep, "vendors": len(vs),
+            "tests": sum(d["tests"] for d in vs.values())}
+           for pep, vs in idx.items()]
+    out.sort(key=lambda x: (x["vendors"], x["tests"]), reverse=True)
+    return out
+
+
+@app.get("/api/peptides/{name}")
+def peptide_detail(name: str) -> dict:
+    idx, vendors = _peptide_index()
+    canon = _normalize_peptide(name) or name
+    return {"peptide": canon, "vendors": _rank_for_peptide(canon, idx, vendors)}
 
 
 @app.post("/api/refresh")
