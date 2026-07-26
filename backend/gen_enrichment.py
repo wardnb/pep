@@ -226,6 +226,19 @@ def build():
             "source_url": "https://peptigrity.com/lab-tests",
         })
     peptide_tests.append(KOLD_RETA)
+    # kold publishes 38 per-lot Accumark COAs across ~30 compounds — record the
+    # breadth as a real testing-volume signal (not fabricated per-peptide numbers).
+    peptide_tests.append({
+        "vendor_name": "KÖLD (kold.us)", "peptide": "(Accumark COA library)",
+        "tests_count": 38, "test_date": "2026-07-01",
+        "source_name": "kold.us / Accumark Labs", "source_url": "https://kold.us/quality/",
+        "lab_name": "Accumark Labs",
+        "notes": "38 per-lot Accumark COAs (G1-S=Semaglutide, G2-T=Tirzepatide, "
+                 "G3-R=Retatrutide, C-Amylin=Cagrilintide, plus BPC-157, TB-500, "
+                 "GHK-Cu, PT-141, NAD+, etc.). Accumark is ISO-17025 PENDING (not yet "
+                 "accredited) and used almost exclusively by kold; COAs are QR-verifiable "
+                 "on Accumark's domain.",
+    })
 
     data = {
         "_meta": {"generated": "2026-07-25",

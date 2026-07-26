@@ -366,6 +366,11 @@ async function init() {
     VENDORS = await getVendors();
     PEPTIDES = await getPeptides();
     populatePeptides();
+    // Default the view to Retatrutide when available.
+    if (PEPTIDES.some(p => p.name === "Retatrutide")) {
+      peptideView = "Retatrutide";
+      document.getElementById("peptide").value = "Retatrutide";
+    }
     render();
   } catch (e) {
     document.getElementById("rows").innerHTML =

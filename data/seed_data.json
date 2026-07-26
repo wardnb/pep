@@ -313,7 +313,7 @@
     },
     {
       "name": "KÖLD (kold.us)", "website": "https://kold.us", "publishes_coa": "partial",
-      "community_score": null, "community_notes": "Too new/small for meaningful independent reputation. Notable: uses Accumark Labs (Anaheim, CA) rather than the community-standard Janoshik. Published COAs cover HPLC purity/identity/fill only - no heavy-metals, sterility, or endotoxin data. (Affiliate listicles that mention it are conflicted.)",
+      "community_score": null, "community_notes": "Too new/small for meaningful independent reputation. Uses Accumark Labs (Anaheim, CA) - a newer, ISO-17025-PENDING (not accredited) lab that appears to be used almost exclusively by kold, rather than the community-standard Janoshik. COAs are QR-verifiable on Accumark's domain (a plus), but the lab itself is not battle-tested. G3-R Retatrutide independently verified 99.9%. (Affiliate listicles that mention kold are conflicted.)",
       "agg_score": null, "agg_tests": null, "agg_source_name": null, "agg_source_url": null,
       "notes": "The vendor whose COA started this project. Per-lot COAs published on /quality/ with Accumark Labs QR verification.",
       "results": [

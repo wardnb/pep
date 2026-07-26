@@ -232,6 +232,19 @@ def verify_janoshik(payload: dict) -> dict:
     return JanoshikVerifier().verify_coa(str(task), str(key))
 
 
+@app.post("/api/verify/accumark")
+def verify_accumark(payload: dict) -> dict:
+    """Pull a structured Accumark COA by its AccuVerify code (e.g. WYGR-AJDT)."""
+    from scrapers.accumark import AccumarkVerifier
+    code = (payload or {}).get("code")
+    if not code:
+        raise HTTPException(status_code=400, detail="Provide code")
+    coa = AccumarkVerifier().verify_coa(str(code))
+    if not coa:
+        raise HTTPException(status_code=404, detail="No record / fetch failed")
+    return coa
+
+
 # --------------------------------------------------------------------------- #
 # Frontend
 # --------------------------------------------------------------------------- #
