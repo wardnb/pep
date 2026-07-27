@@ -361,6 +361,28 @@ def build():
         "source_url": "https://peptidology.co/wp-content/uploads/2026/06/Batch-1691-GLP3-99.36-10.59mg-VanguardEagle.pdf",
         "notes": "3 vials 99.36/99.31/99.41%, ~10.6mg fill; Pb/As/Cd/Hg/Cr all Non-Detect; USP<71> sterility Pass; endotoxin <5 EU/mg. Publicly downloadable PDF.",
     })
+    # Additional verified Retatrutide batches (lot-to-lot consistency check).
+    # (vendor, purity, dosage%, date, lab, batch, url)
+    extra_reta = [
+        ("Ascend Science", 99.57, 102.6, "2026-07-09", "Kovera Labs", "AS-RT20",
+         "https://ascend.science/coa/glp-3-rt/20mg/certificate-of-analysis.pdf"),
+        ("Ascend Science", 99.62, 106.3, "2026-07-09", "Kovera Labs", "AS-RT30",
+         "https://ascend.science/coa/glp-3-rt/30mg/certificate-of-analysis.pdf"),
+        ("Peptidology", 99.8, 96.9, "2026-06-15", "Vanguard Laboratory", "1675",
+         "https://peptidology.co/wp-content/uploads/2026/07/Batch-1675-GLP3-99.8-19.38mg-VanguardEagle-cc.pdf"),
+        ("Peptidology", 99.8, 96.5, "2026-05-20", "Vanguard Laboratory", "1674",
+         "https://peptidology.co/wp-content/uploads/2026/05/Batch-1674-GLP3-99.8-28.96mg-VanguardEagle.pdf"),
+        ("Peptidology", 99.77, 104.6, "2026-06-20", "Vanguard Laboratory", "1692",
+         "https://peptidology.co/wp-content/uploads/2026/06/Batch-1692-GLP3-99.77-5.23mg-VaguardEagle.pdf"),
+    ]
+    for vendor, purity, dosage, date, lab, batch, url in extra_reta:
+        peptide_tests.append({
+            "vendor_name": vendor, "peptide": "Retatrutide", "purity_pct": purity,
+            "dosage_accuracy_pct": dosage, "heavy_metals_pass": 1, "sterility_pass": 1,
+            "endotoxin_pass": 1, "tests_count": 3, "test_date": date, "lab_name": lab,
+            "source_name": f"{lab.split()[0]} COA (Batch {batch})", "source_url": url,
+            "notes": f"Batch {batch}: purity {purity}%, fill {dosage}% of label; full panel pass.",
+        })
     # Peptidology full-panel Vanguard+Eagle (heavy metals + sterility + endotoxin all pass).
     for peptide, purity, date, lot in PEPTIDOLOGY_VANGUARD:
         peptide_tests.append({
