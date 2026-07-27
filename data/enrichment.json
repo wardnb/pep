@@ -1487,6 +1487,21 @@
       "notes": "Vendor-published Janoshik COA with real verification key."
     },
     {
+      "vendor_name": "Ascend Science",
+      "peptide": "Retatrutide",
+      "purity_pct": 99.52,
+      "dosage_accuracy_pct": 105.7,
+      "heavy_metals_pass": 1,
+      "sterility_pass": 1,
+      "endotoxin_pass": 1,
+      "tests_count": 3,
+      "test_date": "2026-07-09",
+      "lab_name": "Kovera Labs",
+      "source_name": "Kovera COA (Batch AS-RT10, KVR-2026-B540AC)",
+      "source_url": "https://ascend.science/coa/glp-3-rt/10mg/certificate-of-analysis.pdf",
+      "notes": "3 vials 99.574/99.441/99.529% (avg 99.52), 10.57mg fill; As/Cd/Pb/Hg all Negative; USP<71> No Growth; endotoxin <=0.5 EU/mL; fentanyl Not Detected (8x panel)."
+    },
+    {
       "vendor_name": "Peptidology",
       "peptide": "Retatrutide",
       "purity_pct": 99.36,
