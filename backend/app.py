@@ -195,11 +195,26 @@ def _rank_for_peptide(pep: str, idx: dict, vendors: dict) -> list[dict]:
     return out
 
 
+# Clinical-trial REFERENCE titrations — what published trials did (supervised
+# research), NOT a dosing recommendation. Shown as an info banner in the app.
+PEPTIDE_REFERENCE = {
+    "Retatrutide": {
+        "title": "Clinical-trial reference — Phase 2 (NCT04881760, NEJM 2023). Not a dosing recommendation; supervised research.",
+        "text": ("Once-weekly subcutaneous. Escalation arms started at 2 mg/week and "
+                 "stepped up ~every 4 weeks (2→4→8→12 mg). E.g. 12 mg target: "
+                 "2 mg wks 1-4, 4 mg wks 5-8, 8 mg wks 9-12, 12 mg thereafter. The 2 mg "
+                 "start was used to reduce GI side effects. Investigational drug, not FDA-approved."),
+        "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+    },
+}
+
+
 @app.get("/api/peptides")
 def peptides() -> list[dict]:
     idx, vendors = _peptide_index()
     out = [{"name": pep, "vendors": len(vs),
-            "tests": sum(d["tests"] for d in vs.values())}
+            "tests": sum(d["tests"] for d in vs.values()),
+            "reference": PEPTIDE_REFERENCE.get(pep)}
            for pep, vs in idx.items()]
     out.sort(key=lambda x: (x["vendors"], x["tests"]), reverse=True)
     return out

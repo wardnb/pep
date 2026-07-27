@@ -32,6 +32,11 @@
     font-size: 13px; cursor: pointer; }
   .toggle button.on { background: var(--accent); color: #06121f; font-weight: 600; }
   .legend { color: var(--muted); font-size: 12px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .pepref { margin: 0 0 14px; font-size: 12.5px; line-height: 1.5; color: var(--text);
+    background: rgba(78,161,255,.08); border: 1px solid rgba(78,161,255,.35);
+    padding: 10px 13px; border-radius: 8px; }
+  .pepref b { color: var(--accent); }
+  .pepref a { color: var(--accent); }
   .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
   th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--border); }
@@ -105,6 +110,7 @@
       <span><span class="dot" style="background:var(--unknown)"></span>insufficient data</span>
     </div>
   </div>
+  <div id="pepref" class="pepref" style="display:none"></div>
   <table id="tbl">
     <thead id="thead">
       <tr>
@@ -199,6 +205,16 @@ const PEPTIDE_THEAD = `<tr>
 
 async function renderPeptide() {
   document.getElementById("thead").innerHTML = PEPTIDE_THEAD;
+  // Clinical-trial reference banner, if this peptide has one.
+  const meta = PEPTIDES.find(p => p.name === peptideView);
+  const refEl = document.getElementById("pepref");
+  if (meta && meta.reference) {
+    refEl.style.display = "block";
+    refEl.innerHTML = `<b>${meta.reference.title}</b> ${meta.reference.text}` +
+      (meta.reference.source_url ? ` <a href="${meta.reference.source_url}" target="_blank" rel="noopener">source</a>` : "");
+  } else {
+    refEl.style.display = "none";
+  }
   const q = document.getElementById("search").value.toLowerCase();
   let rows = (await getPeptideRanking(peptideView))
     .filter(r => r.vendor.toLowerCase().includes(q))
@@ -221,6 +237,7 @@ async function renderPeptide() {
 
 function render() {
   if (peptideView) { renderPeptide(); return; }
+  document.getElementById("pepref").style.display = "none";
   document.getElementById("thead").innerHTML = VENDOR_THEAD;
   bindHeaderSort();
   const q = document.getElementById("search").value.toLowerCase();
