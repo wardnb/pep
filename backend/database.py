@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS test_results (
     lab_id        INTEGER REFERENCES labs(id),
     peptide       TEXT,                         -- e.g. 'Semaglutide', 'BPC-157'
     peptide_rating REAL,                         -- per-peptide composite rating 0-100 (e.g. Finnrick), NOT purity
+    price_per_mg  REAL,                          -- vendor's price per mg for this peptide (USD)
     purity_pct    REAL,                         -- measured HPLC purity, 0-100
     dosage_accuracy_pct REAL,                   -- measured fill vs label, 100 = perfect
     sterility_pass  INTEGER,                    -- 1 pass / 0 fail / NULL not tested

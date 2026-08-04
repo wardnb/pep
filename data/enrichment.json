@@ -191,8 +191,13 @@
     },
     {
       "name": "Amino Lair",
-      "reputation": "trusted",
-      "note": "Real organic forum chatter across multiple communities + independent lab data (a vendor rep also posts)."
+      "reputation": "mixed",
+      "note": "Strong organic reputation + independent lab data, BUT the storefront (aminolair.com) currently appears DOWN — confirm it's still operating (also sells via Telegram @aminolair) before ordering."
+    },
+    {
+      "name": "Peptide Sciences",
+      "reputation": "flagged",
+      "note": "Reported SHUT DOWN (~March 2026) per community shutdown trackers. Do not order; verify status first."
     },
     {
       "name": "Peptidology",
@@ -503,7 +508,8 @@
       "tests_count": 41,
       "test_date": "2026-06-17",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/peptide-sciences"
+      "source_url": "https://www.finnrick.com/vendors/peptide-sciences",
+      "price_per_mg": 17.92
     },
     {
       "vendor_name": "Peptide Sciences",
@@ -557,7 +563,8 @@
       "tests_count": 23,
       "test_date": "2026-06-16",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/peptide-partners"
+      "source_url": "https://www.finnrick.com/vendors/peptide-partners",
+      "price_per_mg": 4.85
     },
     {
       "vendor_name": "Peptide Partners",
@@ -629,7 +636,8 @@
       "tests_count": 31,
       "test_date": "2026-06-08",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/sry-labs"
+      "source_url": "https://www.finnrick.com/vendors/sry-labs",
+      "price_per_mg": 0.5
     },
     {
       "vendor_name": "SRY Labs",
@@ -728,7 +736,8 @@
       "tests_count": 21,
       "test_date": "2026-07-01",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/zenith-jove-peptide-zj"
+      "source_url": "https://www.finnrick.com/vendors/zenith-jove-peptide-zj",
+      "price_per_mg": 0.95
     },
     {
       "vendor_name": "Zenith Jove Peptide",
@@ -764,7 +773,8 @@
       "tests_count": 9,
       "test_date": "2026-07-13",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/amino-lair"
+      "source_url": "https://www.finnrick.com/vendors/amino-lair",
+      "price_per_mg": 1.27
     },
     {
       "vendor_name": "Amino Lair",
@@ -791,7 +801,8 @@
       "tests_count": 8,
       "test_date": "2026-05-08",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/subq-society"
+      "source_url": "https://www.finnrick.com/vendors/subq-society",
+      "price_per_mg": 0.91
     },
     {
       "vendor_name": "Chimera Peptides",
@@ -800,7 +811,8 @@
       "tests_count": 11,
       "test_date": "2026-05-25",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/chimera-peptides"
+      "source_url": "https://www.finnrick.com/vendors/chimera-peptides",
+      "price_per_mg": 1.0
     },
     {
       "vendor_name": "Chimera Peptides",
@@ -827,7 +839,8 @@
       "tests_count": 18,
       "test_date": "2026-06-12",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/orbitrex-peptides"
+      "source_url": "https://www.finnrick.com/vendors/orbitrex-peptides",
+      "price_per_mg": 8.0
     },
     {
       "vendor_name": "Orbitrex Peptides",
@@ -863,7 +876,8 @@
       "tests_count": 7,
       "test_date": "2026-03-03",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/aavant-research"
+      "source_url": "https://www.finnrick.com/vendors/aavant-research",
+      "price_per_mg": 0.67
     },
     {
       "vendor_name": "Inno Peptides",
@@ -881,7 +895,8 @@
       "tests_count": 10,
       "test_date": "2026-07-17",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/inno-peptides"
+      "source_url": "https://www.finnrick.com/vendors/inno-peptides",
+      "price_per_mg": 1.0
     },
     {
       "vendor_name": "Inno Peptides",
@@ -908,7 +923,8 @@
       "tests_count": 12,
       "test_date": "2026-07-13",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/marvel-pep"
+      "source_url": "https://www.finnrick.com/vendors/marvel-pep",
+      "price_per_mg": 1.32
     },
     {
       "vendor_name": "Retalux",
@@ -926,7 +942,8 @@
       "tests_count": 7,
       "test_date": "2026-07-20",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/retalux"
+      "source_url": "https://www.finnrick.com/vendors/retalux",
+      "price_per_mg": 0.93
     },
     {
       "vendor_name": "Retalux",
@@ -944,7 +961,8 @@
       "tests_count": 7,
       "test_date": "2026-03-03",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/kits4less"
+      "source_url": "https://www.finnrick.com/vendors/kits4less",
+      "price_per_mg": 3.0
     },
     {
       "vendor_name": "BioLongevity Labs",
@@ -962,7 +980,8 @@
       "tests_count": 11,
       "test_date": "2025-07-23",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/biolongevity-labs"
+      "source_url": "https://www.finnrick.com/vendors/biolongevity-labs",
+      "price_per_mg": 25.0
     },
     {
       "vendor_name": "BioLongevity Labs",
@@ -1052,7 +1071,8 @@
       "tests_count": 16,
       "test_date": "2026-07-20",
       "source_name": "Finnrick",
-      "source_url": "https://www.finnrick.com/vendors/guangzhou-jeep-biotechnology-jeep"
+      "source_url": "https://www.finnrick.com/vendors/guangzhou-jeep-biotechnology-jeep",
+      "price_per_mg": 0.8
     },
     {
       "vendor_name": "Wuhan Newtop Biotech",
@@ -1490,7 +1510,8 @@
       "source_name": "Accumark Labs COA (verified WYGR-AJDT)",
       "source_url": "https://accumarklabs.com/verify?code=WYGR-AJDT",
       "lab_name": "Accumark Labs",
-      "notes": "G3-R 10mg lot 1032: HPLC 99.9% (spec >98%), fill 10.37/10mg, endotoxin PASS (<5 EU/mL); sterility PENDING, no heavy metals. Independently verified on Accumark's domain."
+      "notes": "G3-R 10mg lot 1032: HPLC 99.9% (spec >98%), fill 10.37/10mg, endotoxin PASS (<5 EU/mL); sterility PENDING, no heavy metals. Independently verified on Accumark's domain.",
+      "price_per_mg": 14.0
     },
     {
       "vendor_name": "KÖLD (kold.us)",
@@ -1654,7 +1675,8 @@
       "lab_name": "Finnrick test network (lab anonymized)",
       "source_name": "Finnrick per-test certificate",
       "source_url": "https://www.finnrick.com/",
-      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G)."
+      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+      "price_per_mg": 0.5
     },
     {
       "vendor_name": "Peptide Partners",
@@ -1665,7 +1687,8 @@
       "lab_name": "Finnrick test network (lab anonymized)",
       "source_name": "Finnrick per-test certificate",
       "source_url": "https://www.finnrick.com/",
-      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G)."
+      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+      "price_per_mg": 4.85
     },
     {
       "vendor_name": "Zenith Jove Peptide",
@@ -1676,7 +1699,8 @@
       "lab_name": "Finnrick test network (lab anonymized)",
       "source_name": "Finnrick per-test certificate",
       "source_url": "https://www.finnrick.com/",
-      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G)."
+      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+      "price_per_mg": 0.95
     },
     {
       "vendor_name": "Inno Peptides",
@@ -1687,7 +1711,8 @@
       "lab_name": "Finnrick test network (lab anonymized)",
       "source_name": "Finnrick per-test certificate",
       "source_url": "https://www.finnrick.com/",
-      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G)."
+      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+      "price_per_mg": 1.0
     },
     {
       "vendor_name": "Chimera Peptides",
@@ -1698,7 +1723,8 @@
       "lab_name": "Finnrick test network (lab anonymized)",
       "source_name": "Finnrick per-test certificate",
       "source_url": "https://www.finnrick.com/",
-      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G)."
+      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+      "price_per_mg": 1.0
     },
     {
       "vendor_name": "Amino Lair",
@@ -1709,7 +1735,8 @@
       "lab_name": "Finnrick test network (lab anonymized)",
       "source_name": "Finnrick per-test certificate",
       "source_url": "https://www.finnrick.com/",
-      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G)."
+      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+      "price_per_mg": 1.27
     },
     {
       "vendor_name": "Marvel Pep",
@@ -1720,7 +1747,8 @@
       "lab_name": "Finnrick test network (lab anonymized)",
       "source_name": "Finnrick per-test certificate",
       "source_url": "https://www.finnrick.com/",
-      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G)."
+      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+      "price_per_mg": 1.32
     },
     {
       "vendor_name": "Guangzhou Jeep Biotechnology (JEEP)",
@@ -1731,7 +1759,8 @@
       "lab_name": "Finnrick test network (lab anonymized)",
       "source_name": "Finnrick per-test certificate",
       "source_url": "https://www.finnrick.com/",
-      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G)."
+      "notes": "Measured HPLC purity from Finnrick's free per-test cert (lab anonymized as Lab E/G).",
+      "price_per_mg": 0.8
     },
     {
       "vendor_name": "Aavant Research",
@@ -1742,7 +1771,8 @@
       "lab_name": "Janoshik Analytical",
       "source_name": "Janoshik (verify key UP96CUWJ7IFV)",
       "source_url": "https://aavantpeptides.com/test-results",
-      "notes": "Vendor-published Janoshik COA with real verification key."
+      "notes": "Vendor-published Janoshik COA with real verification key.",
+      "price_per_mg": 0.67
     },
     {
       "vendor_name": "Ascend Science",
@@ -1757,7 +1787,8 @@
       "lab_name": "Kovera Labs",
       "source_name": "Kovera COA (Batch AS-RT10, KVR-2026-B540AC)",
       "source_url": "https://ascend.science/coa/glp-3-rt/10mg/certificate-of-analysis.pdf",
-      "notes": "3 vials 99.574/99.441/99.529% (avg 99.52), 10.57mg fill; As/Cd/Pb/Hg all Negative; USP<71> No Growth; endotoxin <=0.5 EU/mL; fentanyl Not Detected (8x panel)."
+      "notes": "3 vials 99.574/99.441/99.529% (avg 99.52), 10.57mg fill; As/Cd/Pb/Hg all Negative; USP<71> No Growth; endotoxin <=0.5 EU/mL; fentanyl Not Detected (8x panel).",
+      "price_per_mg": 6.5
     },
     {
       "vendor_name": "Peptidology",
@@ -1787,7 +1818,8 @@
       "lab_name": "Kovera Labs",
       "source_name": "Kovera COA (Batch AS-RT20)",
       "source_url": "https://ascend.science/coa/glp-3-rt/20mg/certificate-of-analysis.pdf",
-      "notes": "Batch AS-RT20: purity 99.57%, fill 102.6% of label; full panel pass."
+      "notes": "Batch AS-RT20: purity 99.57%, fill 102.6% of label; full panel pass.",
+      "price_per_mg": 6.5
     },
     {
       "vendor_name": "Ascend Science",
@@ -1802,7 +1834,8 @@
       "lab_name": "Kovera Labs",
       "source_name": "Kovera COA (Batch AS-RT30)",
       "source_url": "https://ascend.science/coa/glp-3-rt/30mg/certificate-of-analysis.pdf",
-      "notes": "Batch AS-RT30: purity 99.62%, fill 106.3% of label; full panel pass."
+      "notes": "Batch AS-RT30: purity 99.62%, fill 106.3% of label; full panel pass.",
+      "price_per_mg": 6.5
     },
     {
       "vendor_name": "Peptidology",

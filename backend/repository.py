@@ -132,12 +132,13 @@ def upsert_vendor(conn, vendor: dict) -> int:
 def add_test_result(conn, vendor_id: int, result: dict, lab_id: Optional[int] = None) -> None:
     conn.execute(
         """INSERT INTO test_results
-             (vendor_id, lab_id, peptide, peptide_rating, purity_pct, dosage_accuracy_pct,
-              sterility_pass, endotoxin_pass, heavy_metals_pass, tests_count,
-              pass_count, fail_count, test_date, source_name, source_url, notes)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+             (vendor_id, lab_id, peptide, peptide_rating, price_per_mg, purity_pct,
+              dosage_accuracy_pct, sterility_pass, endotoxin_pass, heavy_metals_pass,
+              tests_count, pass_count, fail_count, test_date, source_name, source_url, notes)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         (
             vendor_id, lab_id, result.get("peptide"), result.get("peptide_rating"),
+            result.get("price_per_mg"),
             result.get("purity_pct"),
             result.get("dosage_accuracy_pct"), result.get("sterility_pass"),
             result.get("endotoxin_pass"), result.get("heavy_metals_pass"),

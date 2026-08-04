@@ -289,8 +289,10 @@ KOLD_RETA = {
 REPUTATION = [
     ("Sports Technology Labs", "trusted",
      "Years of genuine, testable SARMs/peptide community track record; real third-party testing."),
-    ("Amino Lair", "trusted",
-     "Real organic forum chatter across multiple communities + independent lab data (a vendor rep also posts)."),
+    ("Amino Lair", "mixed",
+     "Strong organic reputation + independent lab data, BUT the storefront (aminolair.com) currently appears DOWN — confirm it's still operating (also sells via Telegram @aminolair) before ordering."),
+    ("Peptide Sciences", "flagged",
+     "Reported SHUT DOWN (~March 2026) per community shutdown trackers. Do not order; verify status first."),
     ("Peptidology", "mixed",
      "Real but heavily marketed: solicited Trustpilot reviews + affiliate promotion; independent tests uneven (BPC-157 weak)."),
     ("Ascend Science", "new",
@@ -389,6 +391,18 @@ VERIFY_LINKS = {
     "Nantong Guangyuan Chemical (GYC)": [
         ("⚠ Finnrick: rated 'Fraud' (tests retracted)", "https://www.finnrick.com/vendors/nantong-guangyuan-chemical-gyc", "warning"),
     ],
+}
+
+
+# Retatrutide price per mg (USD): Finnrick $/mg + direct vendor pricing.
+# Illustrates that price is ~uncorrelated with quality.
+RETA_PRICE = {
+    "SRY Labs": 0.50, "Aavant Research": 0.67, "Guangzhou Jeep Biotechnology (JEEP)": 0.80,
+    "SubQ Society": 0.91, "Retalux": 0.93, "Zenith Jove Peptide": 0.95,
+    "Inno Peptides": 1.00, "Chimera Peptides": 1.00, "Amino Lair": 1.27, "Marvel Pep": 1.32,
+    "Kits4less": 3.00, "Peptide Partners": 4.85, "Ascend Science": 6.50,
+    "Orbitrex Peptides": 8.00, "KÖLD (kold.us)": 14.00,
+    "Peptide Sciences": 17.92, "BioLongevity Labs": 25.00,
 }
 
 
@@ -510,6 +524,11 @@ def build():
             "source_name": "Kovera Labs COA (vendor-published)", "source_url": url,
             "notes": "ICP-MS heavy metals (Pb/As/Cd/Hg) within limits where tested.",
         })
+
+    # Attach Retatrutide price/mg to every reta row for its vendor.
+    for r in peptide_tests:
+        if r.get("peptide") == "Retatrutide" and r["vendor_name"] in RETA_PRICE:
+            r["price_per_mg"] = RETA_PRICE[r["vendor_name"]]
 
     data = {
         "_meta": {"generated": "2026-07-25",

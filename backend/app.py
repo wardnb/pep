@@ -176,7 +176,10 @@ def _peptide_index():
             if not pep:
                 continue
             d = idx.setdefault(pep, {}).setdefault(vid, {
-                "ratings": [], "purities": [], "tests": 0, "dates": [], "sources": set()})
+                "ratings": [], "purities": [], "tests": 0, "dates": [], "sources": set(),
+                "prices": []})
+            if r.get("price_per_mg") is not None:
+                d["prices"].append(r["price_per_mg"])
             if r.get("peptide_rating") is not None:
                 d["ratings"].append(r["peptide_rating"])
             if r.get("purity_pct") is not None:
@@ -208,6 +211,7 @@ def _rank_for_peptide(pep: str, idx: dict, vendors: dict) -> list[dict]:
             "score": round(score, 1) if score is not None else None,
             "adjusted": round(adj, 1) if adj is not None else None,
             "rating": rating, "purity": purity, "tests": d["tests"],
+            "price_per_mg": min(d["prices"]) if d["prices"] else None,
             "latest": max(d["dates"]) if d["dates"] else None,
             "sources": sorted(d["sources"]),
         })

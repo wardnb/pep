@@ -214,7 +214,7 @@ const VENDOR_THEAD = `<tr>
   <th data-k="sterility">Sterility</th><th data-k="heavy_metals">Heavy metals</th>
   <th data-k="num_results">Tests</th></tr>`;
 const PEPTIDE_THEAD = `<tr>
-  <th>#</th><th>Vendor</th><th>Score</th><th>Finnrick rating</th>
+  <th>#</th><th>Vendor</th><th>Score</th><th>$/mg</th><th>Finnrick rating</th>
   <th>Measured purity</th><th>Tests</th><th>Latest test</th><th>Source</th></tr>`;
 
 async function renderPeptide() {
@@ -239,12 +239,13 @@ async function renderPeptide() {
       <td class="rank">${i + 1}</td>
       <td><div class="vname">${r.vendor}${r.vendor_type==="raws"?' <span class="pill" style="border-color:var(--bad);color:var(--bad)">China raws</span>':''}${repBadge(r.reputation)}</div></td>
       <td class="scorecell" style="color:${colorFor(r.score)}">${r.score===null?"—":Math.round(r.score)}</td>
+      <td>${r.price_per_mg!=null?`$${r.price_per_mg.toFixed(2)}`:'<span class="conf">—</span>'}</td>
       <td>${r.rating!=null?`<span style="color:${colorFor(r.rating)}">${r.rating}</span>`:'<span class="conf">—</span>'}</td>
       <td>${r.purity!=null?`${r.purity}%`:'<span class="conf">—</span>'}</td>
       <td>${r.tests}</td>
       <td><span class="conf">${r.latest||"—"}</span></td>
       <td><span class="conf">${(r.sources||[]).join(", ")||"—"}</span></td>
-    </tr>`).join("") || `<tr><td colspan="8" class="loading">No vendors with ${peptideView} data.</td></tr>`;
+    </tr>`).join("") || `<tr><td colspan="9" class="loading">No vendors with ${peptideView} data.</td></tr>`;
   tbody.querySelectorAll("tr[data-slug]").forEach(tr =>
     tr.addEventListener("click", () => openDetail(tr.dataset.slug)));
 }
