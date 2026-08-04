@@ -42,6 +42,9 @@ CREATE TABLE IF NOT EXISTS vendors (
     -- JSON list of verification/scam-check links: [{label,url,kind}] kind in
     -- official|independent|warning|coa
     verify_links    TEXT,
+    -- US-presence signal: JSON {level: 'verified'|'facing'|'offshore', note: str}
+    -- verified = published US address/entity; facing = US-facing but unverifiable; offshore = overseas
+    us_presence     TEXT,
     -- external aggregator composite (e.g. Finnrick "safety %"): a 0-100 quality signal
     agg_score       REAL,
     agg_tests       INTEGER,

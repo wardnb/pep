@@ -280,6 +280,53 @@
       "note": "Finnrick rated 'Fraud' — all tests retracted; non-delivery reports. Avoid."
     }
   ],
+  "us_presence": [
+    {
+      "name": "Sports Technology Labs",
+      "level": "verified",
+      "note": "Publishes a US street address (Shelton, CT) + named US lab (MZ Biolabs, Tucson AZ); ships USPS same-day domestically."
+    },
+    {
+      "name": "Ascend Science",
+      "level": "verified",
+      "note": "Publishes a US address (St. Johns, FL) + US phone; states compounds are made in accredited US facilities; same-day US shipping. (Suite # — confirm it isn't a virtual mailbox.)"
+    },
+    {
+      "name": "Peptidology",
+      "level": "facing",
+      "note": "Uses US labs (Vanguard + Eagle, ISO 17025) but publishes NO business address — the 'Our Company' page is login-walled. US-facing, not US-verifiable."
+    },
+    {
+      "name": "KÖLD (kold.us)",
+      "level": "facing",
+      "note": "US-facing .us storefront shipping across North America (~2.5 days), but publishes no address or registered entity; About page still contains placeholder 'lorem ipsum' text."
+    },
+    {
+      "name": "Peptide Sciences",
+      "level": "facing",
+      "note": "Historically US-based (San Diego, CA) but reported SHUT DOWN (~March 2026) — verify status."
+    },
+    {
+      "name": "Guangzhou Jeep Biotechnology (JEEP)",
+      "level": "offshore",
+      "note": "Chinese raws manufacturer (Guangzhou) selling direct — overseas shipping, customs risk."
+    },
+    {
+      "name": "Wuhan Newtop Biotech",
+      "level": "offshore",
+      "note": "Chinese raws manufacturer (Wuhan) selling direct — overseas shipping, customs risk."
+    },
+    {
+      "name": "Orbitrex Peptides",
+      "level": "offshore",
+      "note": "Iceland (.is) domain with no US address or entity signal."
+    },
+    {
+      "name": "SRY Labs",
+      "level": "offshore",
+      "note": "No storefront, address, or entity; priced ($0.50/mg) like China-direct raws. No US presence to point to."
+    }
+  ],
   "verify_links": {
     "Aavant Research": [
       {

@@ -394,6 +394,38 @@ VERIFY_LINKS = {
 }
 
 
+# US-presence signal per vendor. level: verified | facing | offshore.
+#  verified = publishes a real US street address / entity + US operation you can point to.
+#  facing   = US-facing storefront (US labs / .us / domestic shipping) but NO verifiable
+#             address or registered entity.
+#  offshore = explicitly overseas or offshore-signaling (China raws, foreign TLD, no US anything).
+# (Vendors not listed here stay blank/unknown — no green badge is itself a signal.)
+US_PRESENCE = [
+    ("Sports Technology Labs", "verified",
+     "Publishes a US street address (Shelton, CT) + named US lab (MZ Biolabs, Tucson AZ); "
+     "ships USPS same-day domestically."),
+    ("Ascend Science", "verified",
+     "Publishes a US address (St. Johns, FL) + US phone; states compounds are made in "
+     "accredited US facilities; same-day US shipping. (Suite # — confirm it isn't a virtual mailbox.)"),
+    ("Peptidology", "facing",
+     "Uses US labs (Vanguard + Eagle, ISO 17025) but publishes NO business address — the "
+     "'Our Company' page is login-walled. US-facing, not US-verifiable."),
+    ("KÖLD (kold.us)", "facing",
+     "US-facing .us storefront shipping across North America (~2.5 days), but publishes no "
+     "address or registered entity; About page still contains placeholder 'lorem ipsum' text."),
+    ("Peptide Sciences", "facing",
+     "Historically US-based (San Diego, CA) but reported SHUT DOWN (~March 2026) — verify status."),
+    ("Guangzhou Jeep Biotechnology (JEEP)", "offshore",
+     "Chinese raws manufacturer (Guangzhou) selling direct — overseas shipping, customs risk."),
+    ("Wuhan Newtop Biotech", "offshore",
+     "Chinese raws manufacturer (Wuhan) selling direct — overseas shipping, customs risk."),
+    ("Orbitrex Peptides", "offshore",
+     "Iceland (.is) domain with no US address or entity signal."),
+    ("SRY Labs", "offshore",
+     "No storefront, address, or entity; priced ($0.50/mg) like China-direct raws. No US presence to point to."),
+]
+
+
 # Retatrutide price per mg (USD): Finnrick $/mg + direct vendor pricing.
 # Illustrates that price is ~uncorrelated with quality.
 RETA_PRICE = {
@@ -552,6 +584,7 @@ def build():
         "new_vendors": NEW_VENDORS,
         "extra_labs": [{"name": n, "accredited": a} for (n, a) in EXTRA_LABS],
         "reputation": [{"name": n, "reputation": b, "note": note} for (n, b, note) in REPUTATION],
+        "us_presence": [{"name": n, "level": lvl, "note": note} for (n, lvl, note) in US_PRESENCE],
         "verify_links": {v: [{"label": l, "url": u, "kind": k} for (l, u, k) in links]
                          for v, links in VERIFY_LINKS.items()},
         "peptide_tests": peptide_tests,

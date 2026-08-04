@@ -103,6 +103,11 @@ def apply_enrichment() -> None:
             conn.execute("UPDATE vendors SET verify_links=? WHERE name=?",
                          (json.dumps(links), name))
 
+        # US-presence signal (stored as JSON: {level, note}).
+        for u in enr.get("us_presence", []):
+            conn.execute("UPDATE vendors SET us_presence=? WHERE name=?",
+                         (json.dumps({"level": u["level"], "note": u.get("note")}), u["name"]))
+
         # Labs referenced by enrichment rows. Insert new ones WITHOUT clobbering
         # the accreditation of labs already seeded (e.g. Vanguard = accredited).
         existing = {r["name"] for r in conn.execute("SELECT name FROM labs").fetchall()}

@@ -78,6 +78,16 @@ def meta() -> dict:
     }
 
 
+def _parse_us(raw):
+    """Parse the vendors.us_presence JSON column into {level, note} or None."""
+    if not raw:
+        return None
+    try:
+        return json.loads(raw)
+    except (ValueError, TypeError):
+        return None
+
+
 @app.get("/api/vendors")
 def vendors() -> list[dict]:
     labs = get_labs_by_id()
@@ -99,6 +109,7 @@ def vendors() -> list[dict]:
             "agg_source_name": v["agg_source_name"],
             "num_results": len(results),
             "reputation": reputation, "reputation_note": v["reputation_note"],
+            "us_presence": _parse_us(v["us_presence"]),
             "score": sd,
         })
     # Sort by composite score (None last), then confidence.
@@ -133,6 +144,7 @@ def vendor_detail(slug: str) -> dict:
     except (ValueError, TypeError):
         pass
 
+    v["us_presence"] = _parse_us(v.get("us_presence"))
     return {
         "vendor": v,
         "score": score.as_dict(),
@@ -208,6 +220,7 @@ def _rank_for_peptide(pep: str, idx: dict, vendors: dict) -> list[dict]:
         out.append({
             "vendor": v["name"], "slug": v["slug"], "vendor_type": v["vendor_type"],
             "reputation": v["reputation"] or "unknown",
+            "us_presence": _parse_us(v["us_presence"]),
             "score": round(score, 1) if score is not None else None,
             "adjusted": round(adj, 1) if adj is not None else None,
             "rating": rating, "purity": purity, "tests": d["tests"],
