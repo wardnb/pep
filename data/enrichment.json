@@ -275,6 +275,172 @@
       "note": "Finnrick rated 'Fraud' — all tests retracted; non-delivery reports. Avoid."
     }
   ],
+  "verify_links": {
+    "Aavant Research": [
+      {
+        "label": "⚠ BBB scam-tracker report (impersonation)",
+        "url": "https://www.bbb.org/scamtracker/lookupscam/1337551",
+        "kind": "warning"
+      },
+      {
+        "label": "⚠ Reddit: 'Scammed, be careful' (clone sites)",
+        "url": "https://www.reddit.com/r/Biohackers/comments/1t52vaw/scammed_be_careful/",
+        "kind": "warning"
+      },
+      {
+        "label": "Finnrick independent tests",
+        "url": "https://www.finnrick.com/vendors/aavant-research",
+        "kind": "independent"
+      }
+    ],
+    "Paradigm Peptides": [
+      {
+        "label": "⚠ DOJ: US v. Matthew Kawa (operator)",
+        "url": "https://www.justice.gov/usao-ndin/united-states-v-matthew-kawa",
+        "kind": "warning"
+      },
+      {
+        "label": "⚠ Reddit: 'Paradigm Peptides… Scam Confirmed'",
+        "url": "https://www.reddit.com/r/SARMs/comments/1ogyxk6/paradigm_peptides_and_pulse_transit_scam_confirmed/",
+        "kind": "warning"
+      }
+    ],
+    "Modified Aminos": [
+      {
+        "label": "⚠ Reddit: 'Modified Aminos scamming'",
+        "url": "https://www.reddit.com/r/PeptideForum/comments/1s1n6jw/modified_aminos_scamming/",
+        "kind": "warning"
+      },
+      {
+        "label": "Trustpilot",
+        "url": "https://www.trustpilot.com/review/modifiedaminos.shop",
+        "kind": "independent"
+      }
+    ],
+    "Peptidology": [
+      {
+        "label": "Trustpilot (note: solicited)",
+        "url": "https://www.trustpilot.com/review/peptidology.co",
+        "kind": "independent"
+      },
+      {
+        "label": "Finnrick independent tests",
+        "url": "https://www.finnrick.com/vendors/peptidology",
+        "kind": "independent"
+      }
+    ],
+    "Ascend Science": [
+      {
+        "label": "⚠ Community concern re: Kovera lab",
+        "url": "https://community.peptidecritic.com/topic/918/new-lab-koverlabs-a-bit-concerning",
+        "kind": "warning"
+      }
+    ],
+    "Peptide Partners": [
+      {
+        "label": "Finnrick independent tests (mixed)",
+        "url": "https://www.finnrick.com/vendors/peptide-partners",
+        "kind": "independent"
+      }
+    ],
+    "Sports Technology Labs": [
+      {
+        "label": "Reddit: long-term positive track record",
+        "url": "https://www.reddit.com/r/SARMs/comments/w3rp6n/has_anyone_bought_from_sports_technology_labs/",
+        "kind": "independent"
+      }
+    ],
+    "Amino Lair": [
+      {
+        "label": "Finnrick independent tests (#4, 87%)",
+        "url": "https://www.finnrick.com/vendors/amino-lair",
+        "kind": "independent"
+      }
+    ],
+    "Inno Peptides": [
+      {
+        "label": "⚠ Reddit: impersonation warning ('Innopeptide')",
+        "url": "https://www.reddit.com/r/PeptideCollective/comments/1scjpvg/innopeptide/",
+        "kind": "warning"
+      },
+      {
+        "label": "Finnrick independent tests (#1 purity)",
+        "url": "https://www.finnrick.com/vendors/inno-peptides",
+        "kind": "independent"
+      }
+    ],
+    "Kits4less": [
+      {
+        "label": "⚠ Evolutionary: 'stay away' complaint",
+        "url": "https://www.evolutionary.org/forums/threads/stay-away-from-kits4less-com.104705/",
+        "kind": "warning"
+      },
+      {
+        "label": "Finnrick independent tests",
+        "url": "https://www.finnrick.com/vendors/kits4less",
+        "kind": "independent"
+      }
+    ],
+    "American Peptides (US)": [
+      {
+        "label": "⚠ Gridinsoft scanner flag (shop subdomain)",
+        "url": "https://gridinsoft.com/online-virus-scanner/url/shop-americanpeptides-us",
+        "kind": "warning"
+      },
+      {
+        "label": "Reddit: 'American Peptides?' (mostly unverified)",
+        "url": "https://www.reddit.com/r/peptidesGrayMarket/comments/1t528co/american_peptides/",
+        "kind": "warning"
+      }
+    ],
+    "Felix Chemical Supply": [
+      {
+        "label": "Reddit: mixed (scam vs repeat-buyer)",
+        "url": "https://www.reddit.com/r/Semaglutide/comments/1kpadec/felixchem/",
+        "kind": "warning"
+      },
+      {
+        "label": "PeptideCritic vendor page",
+        "url": "https://peptidecritic.com/vendor/felix-chem",
+        "kind": "independent"
+      }
+    ],
+    "Retalux": [
+      {
+        "label": "Finnrick independent tests (#8, 86%)",
+        "url": "https://www.finnrick.com/vendors/retalux",
+        "kind": "independent"
+      }
+    ],
+    "SubQ Society": [
+      {
+        "label": "Finnrick independent tests",
+        "url": "https://www.finnrick.com/vendors/subq-society",
+        "kind": "independent"
+      }
+    ],
+    "KÖLD (kold.us)": [
+      {
+        "label": "Accumark COA verification portal",
+        "url": "https://accumarklabs.com/",
+        "kind": "coa"
+      }
+    ],
+    "Spark Peptide": [
+      {
+        "label": "⚠ Placeholder contact info on site",
+        "url": "https://sparkpeptide.com/contact/",
+        "kind": "warning"
+      }
+    ],
+    "Nantong Guangyuan Chemical (GYC)": [
+      {
+        "label": "⚠ Finnrick: rated 'Fraud' (tests retracted)",
+        "url": "https://www.finnrick.com/vendors/nantong-guangyuan-chemical-gyc",
+        "kind": "warning"
+      }
+    ]
+  },
   "peptide_tests": [
     {
       "vendor_name": "Peptide Sciences",

@@ -98,6 +98,11 @@ def apply_enrichment() -> None:
                 (r["reputation"], r.get("note"), r["name"]))
             n_rep += cur.rowcount
 
+        # Verification / scam-check links (stored as JSON).
+        for name, links in enr.get("verify_links", {}).items():
+            conn.execute("UPDATE vendors SET verify_links=? WHERE name=?",
+                         (json.dumps(links), name))
+
         # Labs referenced by enrichment rows. Insert new ones WITHOUT clobbering
         # the accreditation of labs already seeded (e.g. Vanguard = accredited).
         existing = {r["name"] for r in conn.execute("SELECT name FROM labs").fetchall()}

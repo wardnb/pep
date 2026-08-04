@@ -39,6 +39,9 @@ CREATE TABLE IF NOT EXISTS vendors (
     -- community reputation bucket: 'trusted' | 'mixed' | 'new' | 'flagged' | 'unknown'
     reputation      TEXT DEFAULT 'unknown',
     reputation_note TEXT,
+    -- JSON list of verification/scam-check links: [{label,url,kind}] kind in
+    -- official|independent|warning|coa
+    verify_links    TEXT,
     -- external aggregator composite (e.g. Finnrick "safety %"): a 0-100 quality signal
     agg_score       REAL,
     agg_tests       INTEGER,

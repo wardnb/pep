@@ -326,6 +326,72 @@ REPUTATION = [
 ]
 
 
+# Per-vendor verification / scam-check links. kind: independent | warning | coa.
+# (The vendor's own official site is added automatically from its website.)
+VERIFY_LINKS = {
+    "Aavant Research": [
+        ("⚠ BBB scam-tracker report (impersonation)", "https://www.bbb.org/scamtracker/lookupscam/1337551", "warning"),
+        ("⚠ Reddit: 'Scammed, be careful' (clone sites)", "https://www.reddit.com/r/Biohackers/comments/1t52vaw/scammed_be_careful/", "warning"),
+        ("Finnrick independent tests", "https://www.finnrick.com/vendors/aavant-research", "independent"),
+    ],
+    "Paradigm Peptides": [
+        ("⚠ DOJ: US v. Matthew Kawa (operator)", "https://www.justice.gov/usao-ndin/united-states-v-matthew-kawa", "warning"),
+        ("⚠ Reddit: 'Paradigm Peptides… Scam Confirmed'", "https://www.reddit.com/r/SARMs/comments/1ogyxk6/paradigm_peptides_and_pulse_transit_scam_confirmed/", "warning"),
+    ],
+    "Modified Aminos": [
+        ("⚠ Reddit: 'Modified Aminos scamming'", "https://www.reddit.com/r/PeptideForum/comments/1s1n6jw/modified_aminos_scamming/", "warning"),
+        ("Trustpilot", "https://www.trustpilot.com/review/modifiedaminos.shop", "independent"),
+    ],
+    "Peptidology": [
+        ("Trustpilot (note: solicited)", "https://www.trustpilot.com/review/peptidology.co", "independent"),
+        ("Finnrick independent tests", "https://www.finnrick.com/vendors/peptidology", "independent"),
+    ],
+    "Ascend Science": [
+        ("⚠ Community concern re: Kovera lab", "https://community.peptidecritic.com/topic/918/new-lab-koverlabs-a-bit-concerning", "warning"),
+    ],
+    "Peptide Partners": [
+        ("Finnrick independent tests (mixed)", "https://www.finnrick.com/vendors/peptide-partners", "independent"),
+    ],
+    "Sports Technology Labs": [
+        ("Reddit: long-term positive track record", "https://www.reddit.com/r/SARMs/comments/w3rp6n/has_anyone_bought_from_sports_technology_labs/", "independent"),
+    ],
+    "Amino Lair": [
+        ("Finnrick independent tests (#4, 87%)", "https://www.finnrick.com/vendors/amino-lair", "independent"),
+    ],
+    "Inno Peptides": [
+        ("⚠ Reddit: impersonation warning ('Innopeptide')", "https://www.reddit.com/r/PeptideCollective/comments/1scjpvg/innopeptide/", "warning"),
+        ("Finnrick independent tests (#1 purity)", "https://www.finnrick.com/vendors/inno-peptides", "independent"),
+    ],
+    "Kits4less": [
+        ("⚠ Evolutionary: 'stay away' complaint", "https://www.evolutionary.org/forums/threads/stay-away-from-kits4less-com.104705/", "warning"),
+        ("Finnrick independent tests", "https://www.finnrick.com/vendors/kits4less", "independent"),
+    ],
+    "American Peptides (US)": [
+        ("⚠ Gridinsoft scanner flag (shop subdomain)", "https://gridinsoft.com/online-virus-scanner/url/shop-americanpeptides-us", "warning"),
+        ("Reddit: 'American Peptides?' (mostly unverified)", "https://www.reddit.com/r/peptidesGrayMarket/comments/1t528co/american_peptides/", "warning"),
+    ],
+    "Felix Chemical Supply": [
+        ("Reddit: mixed (scam vs repeat-buyer)", "https://www.reddit.com/r/Semaglutide/comments/1kpadec/felixchem/", "warning"),
+        ("PeptideCritic vendor page", "https://peptidecritic.com/vendor/felix-chem", "independent"),
+    ],
+    "Retalux": [
+        ("Finnrick independent tests (#8, 86%)", "https://www.finnrick.com/vendors/retalux", "independent"),
+    ],
+    "SubQ Society": [
+        ("Finnrick independent tests", "https://www.finnrick.com/vendors/subq-society", "independent"),
+    ],
+    "KÖLD (kold.us)": [
+        ("Accumark COA verification portal", "https://accumarklabs.com/", "coa"),
+    ],
+    "Spark Peptide": [
+        ("⚠ Placeholder contact info on site", "https://sparkpeptide.com/contact/", "warning"),
+    ],
+    "Nantong Guangyuan Chemical (GYC)": [
+        ("⚠ Finnrick: rated 'Fraud' (tests retracted)", "https://www.finnrick.com/vendors/nantong-guangyuan-chemical-gyc", "warning"),
+    ],
+}
+
+
 def build():
     peptide_tests = []
     for vendor, peptide, rating, tests, date in FINN_ROWS:
@@ -456,6 +522,8 @@ def build():
         "new_vendors": NEW_VENDORS,
         "extra_labs": [{"name": n, "accredited": a} for (n, a) in EXTRA_LABS],
         "reputation": [{"name": n, "reputation": b, "note": note} for (n, b, note) in REPUTATION],
+        "verify_links": {v: [{"label": l, "url": u, "kind": k} for (l, u, k) in links]
+                         for v, links in VERIFY_LINKS.items()},
         "peptide_tests": peptide_tests,
     }
     OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False))

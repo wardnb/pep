@@ -6,6 +6,7 @@ or use ./run.sh
 """
 from __future__ import annotations
 
+import json
 import os
 from pathlib import Path
 
@@ -121,11 +122,23 @@ def vendor_detail(slug: str) -> dict:
     score = score_vendor(v, results, labs)
     for r in results:
         r["lab_name"] = labs.get(r["lab_id"], {}).get("name") if r.get("lab_id") else None
+    # Assemble verification / scam-check links: official domain first, then the
+    # curated independent/warning links.
+    verify = []
+    if v.get("website"):
+        verify.append({"label": "Official site — confirm you're here, not a lookalike",
+                       "url": v["website"], "kind": "official"})
+    try:
+        verify.extend(json.loads(v["verify_links"]) if v.get("verify_links") else [])
+    except (ValueError, TypeError):
+        pass
+
     return {
         "vendor": v,
         "score": score.as_dict(),
         "results": results,
         "sources": get_sources_for_vendor(v["id"]),
+        "verify": verify,
     }
 
 

@@ -324,6 +324,10 @@ async function openDetail(slug) {
       ${r.source_url?` · <a class="link" href="${r.source_url}" target="_blank" rel="noopener">source</a>`:""}</div>
       ${r.notes?`<div class="meta">${r.notes}</div>`:""}
     </div>`).join("") : `<div class="dimdetail">No published test data points recorded.</div>`;
+  const KIND_ICON = { official: "🏠", independent: "🔎", warning: "⚠", coa: "🧪" };
+  const verify = (d.verify && d.verify.length) ? d.verify.map(x =>
+    `<div class="src"><a href="${x.url}" target="_blank" rel="noopener">${KIND_ICON[x.kind]||"🔗"} ${x.label}</a></div>`).join("")
+    : `<div class="dimdetail">No verification links on file.</div>`;
   const sources = d.sources.length ? d.sources.map(x =>
     `<div class="src"><a href="${x.url}" target="_blank" rel="noopener">${x.title || x.url}</a> <span class="conf">(${x.retrieved_at})</span></div>`).join("")
     : `<div class="dimdetail">No sources recorded.</div>`;
@@ -339,6 +343,7 @@ async function openDetail(slug) {
     ${v.reputation && v.reputation!=="unknown" ? `<div class="${v.reputation==='flagged'?'repwarn':'dimdetail'}">${v.reputation==='flagged'?'⚠ ':''}<b>Community: ${REP_LABEL[v.reputation]}.</b> ${v.reputation_note||''}</div>`:""}
     ${v.notes?`<div class="dimdetail">${v.notes}</div>`:""}
     ${v.sourcing_notes?`<div class="section"><h3>Sourcing</h3><div class="dimdetail">${v.sourcing_notes}</div></div>`:""}
+    <div class="section"><h3>Verify / scam-check</h3><div class="dimdetail">Confirm the official domain and cross-check independent tests / scam reports before ordering — clones use lookalike URLs.</div>${verify}</div>
     <div class="section"><h3>Score breakdown</h3>${dims}</div>
     <div class="section"><h3>Published test data</h3>${results}</div>
     <div class="section"><h3>Sources</h3>${sources}</div>
