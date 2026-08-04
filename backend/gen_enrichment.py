@@ -403,6 +403,7 @@ RETA_PRICE = {
     "Kits4less": 3.00, "Peptide Partners": 4.85, "Ascend Science": 6.50,
     "Orbitrex Peptides": 8.00, "KÖLD (kold.us)": 14.00,
     "Peptide Sciences": 17.92, "BioLongevity Labs": 25.00,
+    "Sports Technology Labs": 34.00,  # GLP-3 RT 5mg @ $169.99 = $34.00/mg
 }
 
 
@@ -505,6 +506,16 @@ def build():
             "source_name": f"{lab.split()[0]} COA (Batch {batch})", "source_url": url,
             "notes": f"Batch {batch}: purity {purity}%, fill {dosage}% of label; full panel pass.",
         })
+    # Sports Technology Labs Retatrutide (GLP-3 RT 5mg) — vendor COA, MZ Biolabs (accredited US).
+    peptide_tests.append({
+        "vendor_name": "Sports Technology Labs", "peptide": "Retatrutide", "purity_pct": 99.90,
+        "tests_count": 1, "test_date": "2026-07-01", "lab_name": "MZ Biolabs",
+        "source_name": "Vendor COA (MZ Biolabs, accredited US lab)",
+        "source_url": "https://sportstechnologylabs.com/product/glp-3-rt-5mg/",
+        "notes": "GLP-3 RT 5mg vial: batch-tested 99.90% HPLC (min spec 98%), identity+concentration "
+                 "verified by MZ Biolabs (Tucson, AZ). $169.99/vial = $34.00/mg — most expensive reta/mg "
+                 "in the dataset; no published heavy-metals/sterility panel.",
+    })
     # Peptidology full-panel Vanguard+Eagle (heavy metals + sterility + endotoxin all pass).
     for peptide, purity, date, lot in PEPTIDOLOGY_VANGUARD:
         peptide_tests.append({

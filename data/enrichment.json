@@ -1883,6 +1883,18 @@
       "notes": "Batch 1692: purity 99.77%, fill 104.6% of label; full panel pass."
     },
     {
+      "vendor_name": "Sports Technology Labs",
+      "peptide": "Retatrutide",
+      "purity_pct": 99.9,
+      "tests_count": 1,
+      "test_date": "2026-07-01",
+      "lab_name": "MZ Biolabs",
+      "source_name": "Vendor COA (MZ Biolabs, accredited US lab)",
+      "source_url": "https://sportstechnologylabs.com/product/glp-3-rt-5mg/",
+      "notes": "GLP-3 RT 5mg vial: batch-tested 99.90% HPLC (min spec 98%), identity+concentration verified by MZ Biolabs (Tucson, AZ). $169.99/vial = $34.00/mg — most expensive reta/mg in the dataset; no published heavy-metals/sterility panel.",
+      "price_per_mg": 34.0
+    },
+    {
       "vendor_name": "Peptidology",
       "peptide": "PNC-27",
       "purity_pct": 99.66,
