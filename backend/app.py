@@ -85,12 +85,20 @@ def vendors() -> list[dict]:
     for v in list_vendors():
         results = grouped.get(v["id"], [])
         score = score_vendor(v, results, labs)
+        sd = score.as_dict()
+        # A "flagged" community reputation (scam/impersonation/legal) discounts the
+        # trust-adjusted score so a red-flag vendor can't sit at the top — the raw
+        # COA "total" stays intact and honest, but Adjusted (the ranking column) drops.
+        reputation = v["reputation"] or "unknown"
+        if reputation == "flagged" and sd["adjusted"] is not None:
+            sd["adjusted"] = max(0.0, round(sd["adjusted"] - 30, 1))
         out.append({
             "name": v["name"], "slug": v["slug"], "website": v["website"],
             "vendor_type": v["vendor_type"], "publishes_coa": v["publishes_coa"],
             "agg_source_name": v["agg_source_name"],
             "num_results": len(results),
-            "score": score.as_dict(),
+            "reputation": reputation, "reputation_note": v["reputation_note"],
+            "score": sd,
         })
     # Sort by composite score (None last), then confidence.
     out.sort(key=lambda x: (
@@ -183,6 +191,7 @@ def _rank_for_peptide(pep: str, idx: dict, vendors: dict) -> list[dict]:
         adj = score * weight + 50 * (1 - weight) if score is not None else None
         out.append({
             "vendor": v["name"], "slug": v["slug"], "vendor_type": v["vendor_type"],
+            "reputation": v["reputation"] or "unknown",
             "score": round(score, 1) if score is not None else None,
             "adjusted": round(adj, 1) if adj is not None else None,
             "rating": rating, "purity": purity, "tests": d["tests"],

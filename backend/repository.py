@@ -84,11 +84,11 @@ def upsert_vendor(conn, vendor: dict) -> int:
     conn.execute(
         """INSERT INTO vendors
              (name, slug, website, vendor_type, sourcing_notes, publishes_coa,
-              community_score, community_notes,
+              community_score, community_notes, reputation, reputation_note,
               agg_score, agg_tests, agg_source_name, agg_source_url, notes, updated_at)
            VALUES
              (:name, :slug, :website, :vendor_type, :sourcing_notes, :publishes_coa,
-              :community_score, :community_notes,
+              :community_score, :community_notes, :reputation, :reputation_note,
               :agg_score, :agg_tests, :agg_source_name, :agg_source_url, :notes, datetime('now'))
            ON CONFLICT(slug) DO UPDATE SET
              name=excluded.name,
@@ -98,6 +98,8 @@ def upsert_vendor(conn, vendor: dict) -> int:
              publishes_coa=excluded.publishes_coa,
              community_score=COALESCE(excluded.community_score, vendors.community_score),
              community_notes=COALESCE(excluded.community_notes, vendors.community_notes),
+             reputation=CASE WHEN excluded.reputation='unknown' THEN vendors.reputation ELSE excluded.reputation END,
+             reputation_note=COALESCE(excluded.reputation_note, vendors.reputation_note),
              agg_score=COALESCE(excluded.agg_score, vendors.agg_score),
              agg_tests=COALESCE(excluded.agg_tests, vendors.agg_tests),
              agg_source_name=COALESCE(excluded.agg_source_name, vendors.agg_source_name),
@@ -113,6 +115,8 @@ def upsert_vendor(conn, vendor: dict) -> int:
             "publishes_coa": vendor.get("publishes_coa", "unknown"),
             "community_score": vendor.get("community_score"),
             "community_notes": vendor.get("community_notes"),
+            "reputation": vendor.get("reputation", "unknown"),
+            "reputation_note": vendor.get("reputation_note"),
             "agg_score": vendor.get("agg_score"),
             "agg_tests": vendor.get("agg_tests"),
             "agg_source_name": vendor.get("agg_source_name"),

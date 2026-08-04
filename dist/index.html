@@ -54,6 +54,14 @@
   .bar > span { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px; }
   .conf { font-size: 11px; color: var(--muted); }
   .pill { font-size: 11px; padding: 2px 7px; border-radius: 20px; border: 1px solid var(--border); color: var(--muted); }
+  .rep { font-size: 11px; padding: 2px 7px; border-radius: 20px; font-weight: 600; white-space: nowrap; }
+  .rep-trusted { background: rgba(63,185,80,.15); color: var(--good); border: 1px solid rgba(63,185,80,.4); }
+  .rep-mixed { background: rgba(217,164,65,.13); color: var(--mid); border: 1px solid rgba(217,164,65,.4); }
+  .rep-new { background: rgba(107,117,128,.15); color: var(--muted); border: 1px solid var(--border); }
+  .rep-flagged { background: rgba(240,102,63,.15); color: var(--bad); border: 1px solid rgba(240,102,63,.5); }
+  .repwarn { margin: 10px 0; font-size: 13px; line-height: 1.5; color: var(--text);
+    background: rgba(240,102,63,.1); border: 1px solid rgba(240,102,63,.45); padding: 10px 13px; border-radius: 8px; }
+  .repwarn b { color: var(--bad); }
   /* detail panel */
   .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: none; }
   .overlay.open { display: block; }
@@ -84,8 +92,9 @@
   <h1>Peptide Vendor Rater</h1>
   <div class="sub">Vendors ranked by a transparent, weighted score built from <b>public</b> third-party
     testing data: lab purity &amp; dosage accuracy, testing transparency, community reputation, test
-    freshness, sterility/endotoxin, and heavy-metals (ICP-MS) screening. Filter to see upstream
-    China raws suppliers. Click any vendor for the full breakdown and sources.</div>
+    freshness, sterility/endotoxin, and heavy-metals (ICP-MS) screening. Vendor badges flag
+    <b>community reputation</b> (✓ Trusted / ~ Mixed / • New / <span style="color:var(--bad)">⚠ Flagged</span>) —
+    flagged vendors (scam/impersonation/legal signals) are penalized in the Adjusted score. Click a vendor for the breakdown and sources.</div>
   <div class="disclaimer" id="disclaimer">Loading disclaimer…</div>
 </header>
 <div class="wrap">
@@ -192,6 +201,11 @@ function dimScore(v, key) {
   const d = v.score.dimensions[key];
   return d ? d.score : null;
 }
+const REP_LABEL = { trusted: "✓ Trusted", mixed: "~ Mixed", new: "• New/unproven", flagged: "⚠ Flagged" };
+function repBadge(rep) {
+  if (!rep || rep === "unknown") return "";
+  return ` <span class="rep rep-${rep}">${REP_LABEL[rep] || rep}</span>`;
+}
 
 const VENDOR_THEAD = `<tr>
   <th data-k="rank">#</th><th data-k="name">Vendor</th><th data-k="total">Score</th>
@@ -223,7 +237,7 @@ async function renderPeptide() {
   tbody.innerHTML = rows.map((r, i) => `
     <tr data-slug="${r.slug}">
       <td class="rank">${i + 1}</td>
-      <td><div class="vname">${r.vendor}${r.vendor_type==="raws"?' <span class="pill" style="border-color:var(--bad);color:var(--bad)">China raws</span>':''}</div></td>
+      <td><div class="vname">${r.vendor}${r.vendor_type==="raws"?' <span class="pill" style="border-color:var(--bad);color:var(--bad)">China raws</span>':''}${repBadge(r.reputation)}</div></td>
       <td class="scorecell" style="color:${colorFor(r.score)}">${r.score===null?"—":Math.round(r.score)}</td>
       <td>${r.rating!=null?`<span style="color:${colorFor(r.rating)}">${r.rating}</span>`:'<span class="conf">—</span>'}</td>
       <td>${r.purity!=null?`${r.purity}%`:'<span class="conf">—</span>'}</td>
@@ -262,7 +276,7 @@ function render() {
     const t = v.score.total, adj = v.score.adjusted;
     return `<tr data-slug="${v.slug}">
       <td class="rank">${i + 1}</td>
-      <td><div class="vname">${v.name}${v.vendor_type==="raws"?' <span class="pill" style="border-color:var(--bad);color:var(--bad)">China raws</span>':''}</div><div class="vhost">${host(v.website) || "&mdash;"}</div></td>
+      <td><div class="vname">${v.name}${v.vendor_type==="raws"?' <span class="pill" style="border-color:var(--bad);color:var(--bad)">China raws</span>':''}${repBadge(v.reputation)}</div><div class="vhost">${host(v.website) || "&mdash;"}</div></td>
       <td class="scorecell" style="color:${colorFor(t)}">${t === null ? "—" : Math.round(t)}</td>
       <td class="scorecell" style="color:${colorFor(adj)};font-size:14px">${adj === null ? "—" : Math.round(adj)}</td>
       <td><span class="conf">${Math.round(v.score.confidence*100)}%</span></td>
@@ -322,6 +336,7 @@ async function openDetail(slug) {
       <span class="conf">/ 100 · adjusted ${s.adjusted===null?"—":Math.round(s.adjusted)} · confidence ${Math.round(s.confidence*100)}% · COAs: ${v.publishes_coa}</span>
     </div>
     ${v.vendor_type==="raws"?`<div class="dimdetail" style="color:var(--bad)">⚠ Upstream Chinese raw-material supplier — typically sold direct from China (customs, QC, and recourse risk).</div>`:""}
+    ${v.reputation && v.reputation!=="unknown" ? `<div class="${v.reputation==='flagged'?'repwarn':'dimdetail'}">${v.reputation==='flagged'?'⚠ ':''}<b>Community: ${REP_LABEL[v.reputation]}.</b> ${v.reputation_note||''}</div>`:""}
     ${v.notes?`<div class="dimdetail">${v.notes}</div>`:""}
     ${v.sourcing_notes?`<div class="section"><h3>Sourcing</h3><div class="dimdetail">${v.sourcing_notes}</div></div>`:""}
     <div class="section"><h3>Score breakdown</h3>${dims}</div>

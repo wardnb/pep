@@ -284,6 +284,48 @@ KOLD_RETA = {
 }
 
 
+# Community reputation from live Reddit/forum/Finnrick research.
+# (vendor, bucket, note). Buckets: trusted | mixed | new | flagged.
+REPUTATION = [
+    ("Sports Technology Labs", "trusted",
+     "Years of genuine, testable SARMs/peptide community track record; real third-party testing."),
+    ("Amino Lair", "trusted",
+     "Real organic forum chatter across multiple communities + independent lab data (a vendor rep also posts)."),
+    ("Peptidology", "mixed",
+     "Real but heavily marketed: solicited Trustpilot reviews + affiliate promotion; independent tests uneven (BPC-157 weak)."),
+    ("Ascend Science", "new",
+     "Near-zero organic footprint (~15-month-old brand). Its testing lab, Kovera, is questioned by the community."),
+    ("Peptide Partners", "mixed",
+     "Lots of independent tests but ~62% avg / inconsistent; reputation is referral/affiliate-driven with removed Trustpilot reviews."),
+    ("Spark Peptide", "new",
+     "SEO/self-generated presence only; placeholder contact info. No organic track record."),
+    ("Modified Aminos", "flagged",
+     "Early non-delivery / refund-denied complaint on a near-zero track record. Caution."),
+    ("Felix Chemical Supply", "mixed",
+     "Split reports: repeat buyers vs 'scam' accusations; intermittent site downtime."),
+    ("Inno Peptides", "mixed",
+     "Top independent purity data, but the name is heavily impersonation-prone — verify the exact storefront."),
+    ("Paradigm Peptides", "flagged",
+     "DOJ/FDA action history against the original operator + 'scam confirmed' clone/successor confusion."),
+    ("American Peptides (US)", "new",
+     "Mostly 'is this legit?' threads; scam-scanner flag on its shop subdomain. Unproven."),
+    ("KÖLD (kold.us)", "new",
+     "Essentially zero community footprint; very new, on a new/unaccredited lab (Accumark)."),
+    ("Kits4less", "mixed",
+     "AAS-kit vendor with a multi-year track record but also non-delivery + damaged-product complaints."),
+    ("Aavant Research", "flagged",
+     "Legit brand but ACTIVELY IMPERSONATED — BBB scam-tracker + non-delivery clone reports. Only buy via the verified domain."),
+    ("Retalux", "mixed",
+     "Good independently-tested purity, but sold via resellers (Peptaura) with reported shipping delays."),
+    ("SubQ Society", "new",
+     "Has independent lab data but no organic community discussion. Unproven."),
+    ("Amino Asylum", "flagged",
+     "Long-discussed but mixed-to-controversial; recurring scam discussions. Verify before trusting."),
+    ("Nantong Guangyuan Chemical (GYC)", "flagged",
+     "Finnrick rated 'Fraud' — all tests retracted; non-delivery reports. Avoid."),
+]
+
+
 def build():
     peptide_tests = []
     for vendor, peptide, rating, tests, date in FINN_ROWS:
@@ -413,6 +455,7 @@ def build():
         ],
         "new_vendors": NEW_VENDORS,
         "extra_labs": [{"name": n, "accredited": a} for (n, a) in EXTRA_LABS],
+        "reputation": [{"name": n, "reputation": b, "note": note} for (n, b, note) in REPUTATION],
         "peptide_tests": peptide_tests,
     }
     OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False))

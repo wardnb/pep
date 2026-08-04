@@ -36,6 +36,9 @@ CREATE TABLE IF NOT EXISTS vendors (
     -- community reputation on a -1..+1 scale (-1 controversial, 0 neutral/unknown, +1 strong)
     community_score REAL,
     community_notes TEXT,
+    -- community reputation bucket: 'trusted' | 'mixed' | 'new' | 'flagged' | 'unknown'
+    reputation      TEXT DEFAULT 'unknown',
+    reputation_note TEXT,
     -- external aggregator composite (e.g. Finnrick "safety %"): a 0-100 quality signal
     agg_score       REAL,
     agg_tests       INTEGER,

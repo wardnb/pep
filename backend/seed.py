@@ -90,6 +90,14 @@ def apply_enrichment() -> None:
             v = {**v, "slug": _slug(v["name"])}
             upsert_vendor(conn, v)
 
+        # Community reputation buckets.
+        n_rep = 0
+        for r in enr.get("reputation", []):
+            cur = conn.execute(
+                "UPDATE vendors SET reputation=?, reputation_note=? WHERE name=?",
+                (r["reputation"], r.get("note"), r["name"]))
+            n_rep += cur.rowcount
+
         # Labs referenced by enrichment rows. Insert new ones WITHOUT clobbering
         # the accreditation of labs already seeded (e.g. Vanguard = accredited).
         existing = {r["name"] for r in conn.execute("SELECT name FROM labs").fetchall()}
@@ -113,8 +121,8 @@ def apply_enrichment() -> None:
             n_rows += 1
         conn.commit()
     print(f"Enrichment: {n_upd} vendor corrections, "
-          f"{len(enr.get('new_vendors', []))} new vendors, {n_rows} peptide rows "
-          f"({skipped} skipped for unknown vendor)")
+          f"{len(enr.get('new_vendors', []))} new vendors, {n_rows} peptide rows, "
+          f"{n_rep} reputation tags ({skipped} skipped for unknown vendor)")
 
 
 def _slug(name: str) -> str:
